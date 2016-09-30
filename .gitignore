@@ -18,5 +18,5 @@
 !.xserverrc
 
 # Config file directory
-!.config/
+!.config/*
 
