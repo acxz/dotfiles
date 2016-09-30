@@ -1,0 +1,22 @@
+# Exclude all files/directories except the ones I want
+*
+
+# Git related files
+!.gitignore
+
+# Zsh related files
+!.zshrc
+!.zprofile
+
+# Vim related files
+!.vimperatorrc
+!.vimrc
+
+# Xorg related files
+!.xinitrc
+!.Xresources
+!.xserverrc
+
+# Config file directory
+!.config/
+
