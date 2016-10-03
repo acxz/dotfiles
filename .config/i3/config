@@ -45,7 +45,7 @@ gaps inner 10
 gaps outer 10
 
 # Borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # Colors
 
