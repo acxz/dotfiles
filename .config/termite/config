@@ -1,5 +1,5 @@
 [options]
-font = Fira Mono for Powerline 11
+font = Terminess Powerline 12
 
 [colors]
 
@@ -10,33 +10,33 @@ cursor          = #a6a28c
 background      = rgba(60, 56, 57, 0.8)
 
 # black
-color0  = #20201d
-color8  = #7d7a68
+color0  = #1b1918
+color8  = #766e6b
 
 # red
-color1  = #d73737
-color9  = #d73737
+color1  = #f22c40
+color9  = #f22c40
 
 # green
-color2  = #60ac39
-color10 = #60ac39
+color2  = #5ab738
+color10 = #5ab738
 
 # yellow
-color3  = #cfb017
-color11 = #cfb017
+color3  = #d5911a
+color11 = #d5911a
 
 # blue
-color4  = #6684e1
-color12 = #6684e1
+color4  = #407ee7
+color12 = #407ee7
 
 # magenta
-color5  = #b854d4
-color13 = #b854d4
+color5  = #6666ea
+color13 = #6666ea
 
 # cyan
-color6  = #1fad83
-color14 = #1fad83
+color6  = #00ad9c
+color14 = #00ad9c
 
 # white
-color7  = #a6a28c
-color15 = #fefbec
+color7  = #a8a19f
+color15 = #f1efee
