@@ -7,7 +7,7 @@ font = Terminess Powerline 12
 foreground      = #a6a28c
 foreground_bold = #a6a28c
 cursor          = #a6a28c
-background      = rgba(60, 56, 57, 0.8)
+background      = rgba(60, 56, 57, 0.5)
 
 # black
 color0  = #1b1918
