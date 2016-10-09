@@ -32,9 +32,11 @@ font pango:Terminess Powerline 8
 floating_modifier $mod
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/dark_steins_gate.jpg
+exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
 
 # Compton
+# With conf file
+# exec --no-startup-id compton --config ~/.config/compton.conf.test -b
 exec --no-startup-id compton -b
 
 # Eliminate window titlebars
@@ -45,9 +47,24 @@ gaps inner 10
 gaps outer 10
 
 # Borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 
 # Colors
+set $background #666699
+set $foreground #000000
+set $gray       #666699
+set $primary    #5AB738
+set $secondary  #AAE72C
+set $tertiary   #BDB410
+set $warning    #80845C
+
+# colors                BORDER      BACKGROUND TEXT        INDICATOR
+client.focused          $primary    $primary   $background $primary
+client.focused_inactive $background $primary   $foreground $background
+client.unfocused        $gray       $gray      $background $secondary
+client.urgent           $warning    $warning   $foreground $warning
+
+
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -68,16 +85,16 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left 20px or 20ppt
-bindsym $mod+Shift+j move down 20px or 20ppt
-bindsym $mod+Shift+k move up 20px or 20ppt
-bindsym $mod+Shift+l move right 20px or 20ppt
+bindsym $mod+Shift+h move left 20 px
+bindsym $mod+Shift+j move down 20 px
+bindsym $mod+Shift+k move up 20 px
+bindsym $mod+Shift+l move right 20 px
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left 20px or 20ppt
-bindsym $mod+Shift+Down move down 20px or 20ppt
-bindsym $mod+Shift+Up move up 20px or 20ppt
-bindsym $mod+Shift+Right move right 20px or 20ppt
+bindsym $mod+Shift+Left move left 20 px
+bindsym $mod+Shift+Down move down 20 px
+bindsym $mod+Shift+Up move up 20 px
+bindsym $mod+Shift+Right move right 20 px
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -144,16 +161,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 20 px or 20 ppt
-        bindsym j resize grow height 20 px or 20 ppt
-        bindsym k resize shrink height 20 px or 20 ppt
-        bindsym l resize grow width 20 px or 20 ppt
+        bindsym h resize shrink width 20 px or 1 ppt
+        bindsym j resize grow height 20 px or 1 ppt
+        bindsym k resize shrink height 20 px or 1 ppt
+        bindsym l resize grow width 20 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 20 px or 20 ppt
-        bindsym Down resize grow height 20 px or 20 ppt
-        bindsym Up resize shrink height 20 px or 20 ppt
-        bindsym Right resize grow width 20 px or 20 ppt
+        bindsym Left resize shrink width 20 px or 1 ppt
+        bindsym Down resize grow height 20 px or 1 ppt
+        bindsym Up resize shrink height 20 px or 1 ppt
+        bindsym Right resize grow width 20 px or 1 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -162,6 +179,44 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Change gaps on the fly 
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -169,7 +224,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # Binding for rofi
-bindsym $mod+d exec rofi -show run -lines 5 
+bindsym $mod+d exec rofi -show run -lines 10
 
 # Binding for lock
 bindsym $mod+Shift+x exec i3lock-fancy -p

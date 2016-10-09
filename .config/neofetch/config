@@ -327,7 +327,7 @@ image_position="left"
 
 # Crop mode
 # --crop_mode normal/fit/fill
-crop_mode="fit"
+crop_mode="normal"
 
 # Crop offset
 # Only affects normal mode.

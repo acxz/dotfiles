@@ -1,13 +1,13 @@
 ! ----------------
 ! Rofi Color Theme
 ! ----------------
-rofi.width: 1920
-rofi.padding: 460
-rofi.bw: 0
+rofi.width: 20
+rofi.padding: 7 
+rofi.bw: 3
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.color-enabled: true
-rofi.color-window: argb:CC3c3839, argb:CC3c3839 
-rofi.color-normal: argb:00000000, argb:FFffffff, argb:00000000, argb:FF6684e1, argb:FFffffff
-rofi.color-active: argb:00000000, argb:FFffffff, argb:00000000, argb:FF6684e1, argb:FFffffff 
-rofi.color-urgent: argb:00000000, argb:FFffffff, argb:00000000, argb:FF6684e1, argb:FFffffff
+rofi.color-window: argb:B3464646, argb:FF00AD9C, argb:B3464646
+rofi.color-normal: argb:00000000, argb:FFafffa3, argb:00000000, argb:FF6666ea, argb:FFafffa3
+rofi.color-active: argb:00000000, argb:FFafffa3, argb:00000000, argb:FF6666ea, argb:FFafffa3 
+rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:FF6666ea, argb:FFafffa3

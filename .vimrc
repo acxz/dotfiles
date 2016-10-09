@@ -33,8 +33,8 @@ set ruler
 " Highlight current line and row
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=None ctermbg=black ctermfg=white
-hi CursorColumn cterm=None ctermbg=black ctermfg=white
+hi CursorLine cterm=None ctermbg=black
+hi CursorColumn cterm=None ctermbg=black
 
 " Ignore case when searching
 set ignorecase

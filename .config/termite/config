@@ -4,10 +4,10 @@ font = Terminess Powerline 12
 [colors]
 
 # special
-foreground      = #a6a28c
-foreground_bold = #a6a28c
-cursor          = #a6a28c
-background      = rgba(60, 56, 57, 0.5)
+foreground      = #afffa3
+foreground_bold = #afffa3
+cursor          = #afffa3
+background      = rgba(70, 70, 70, 0.7)
 
 # black
 color0  = #1b1918
