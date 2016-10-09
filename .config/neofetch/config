@@ -4,6 +4,8 @@
 # Neofetch config file
 # https://github.com/dylanaraps/neofetch
 
+# TODO - fix song spacing and disk bar and color width 
+
 # Speed up script by not using unicode
 export LC_ALL=C
 export LANG=C
@@ -17,47 +19,49 @@ export LANG=C
 printinfo () {
     info title
     info underline
-
-    info "distro " distro
-    info "kernel " kernel
-    info "uptime " uptime
-    info "pkgs   " packages
-    info "shell  " shell
-
-    info linebreak
-
-    info "cpu    " cpu
-    info "gpu    " gpu
-    info "mem    " memory
-    info "disk   " disk
-    info "bat    " battery
+    
+    info "model   " model
+    info "distro  " distro
+    info "kernel  " kernel
+    info "uptime  " uptime
+    info "pkgs    " packages
+    info "shell   " shell
 
     info linebreak
 
-    info "loc ip " localip
-    info "pub ip " publicip
+    info "cpu     " cpu
+    info "cpu_usg " cpu_usage
+    info "gpu     " gpu
+    info "mem     " memory
+    info "disk    " disk
+    info "bat     " battery
 
     info linebreak
 
-    info "res    " resolution
+    info "loc_ip  " localip
+    info "pub_ip  " publicip
+
+    info linebreak
+
+    info "res     " resolution
     # info "de     " de
-    info "wm     " wm
+    info "wm      " wm
     # info "wm theme" wmtheme
-    info "theme  " theme
-    info "icons  " icons
-    info "font   " font
+    info "theme   " theme
+    info "icons   " icons
+    info "font    " font
+    info "term    " term
 
     info linebreak
 
     # info "users" users
     # info "birthday" birthday
-    info "song   " song
+    info "song    " song
 
     info linebreak
 
     info cols
 
-    info linebreak
 }
 
 
@@ -112,8 +116,8 @@ speed_type="max"
 # CPU Display
 # Set shorthand setting and progress bar setting
 # --cpu_display (name, speed, tiny, on, off) (bar, infobar, barinfo, off)
-cpu_shorthand="on"
-cpu_display="off"
+cpu_shorthand="off"
+cpu_display="barinfo"
 
 # CPU Cores
 # Display CPU cores in output

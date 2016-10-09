@@ -32,7 +32,7 @@ font pango:Terminess Powerline 8
 floating_modifier $mod
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/steins_gate_members.png
+exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/dark_steins_gate.jpg
 
 # Compton
 exec --no-startup-id compton -b
