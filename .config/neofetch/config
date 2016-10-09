@@ -206,11 +206,15 @@ birthday_format="+%a %d %b %Y %l:%M %p"
 # Color block range
 # --block_range start end
 start=0
-end=15
+end=7
 
 # Toggle color blocks
 # --color_blocks on/off
 color_blocks="on"
+
+# Color block height
+# --color_block_height num
+block_height=1
 
 # Color block width
 # --color_block_width num
@@ -323,7 +327,7 @@ image_position="left"
 
 # Crop mode
 # --crop_mode normal/fit/fill
-crop_mode="normal"
+crop_mode="fit"
 
 # Crop offset
 # Only affects normal mode.
