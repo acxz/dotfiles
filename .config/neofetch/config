@@ -18,33 +18,45 @@ printinfo () {
     info title
     info underline
 
-    info "OS" distro
-    info "Kernel" kernel
-    info "Uptime" uptime
-    info "Packages" packages
-    info "Shell" shell
-    info "Resolution" resolution
-    info "DE" de
-    info "WM" wm
-    info "WM Theme" wmtheme
-    info "Theme" theme
-    info "Icons" icons
-    info "Font" font
-    info "CPU" cpu
-    info "GPU" gpu
-    info "Memory" memory
-
-    info "Disk" disk
-    info "Battery" battery
-    # info "Local IP" localip
-    # info "Public IP" publicip
-    # info "Users" users
-    # info "Birthday" birthday
-    # info "Song" song
+    info "distro " distro
+    info "kernel " kernel
+    info "uptime " uptime
+    info "pkgs   " packages
+    info "shell  " shell
 
     info linebreak
+
+    info "cpu    " cpu
+    info "gpu    " gpu
+    info "mem    " memory
+    info "disk   " disk
+    info "bat    " battery
+
+    info linebreak
+
+    info "loc ip " localip
+    info "pub ip " publicip
+
+    info linebreak
+
+    info "res    " resolution
+    # info "de     " de
+    info "wm     " wm
+    # info "wm theme" wmtheme
+    info "theme  " theme
+    info "icons  " icons
+    info "font   " font
+
+    info linebreak
+
+    # info "users" users
+    # info "birthday" birthday
+    info "song   " song
+
+    info linebreak
+
     info cols
-    info linebreak
+
     info linebreak
 }
 
@@ -100,7 +112,7 @@ speed_type="max"
 # CPU Display
 # Set shorthand setting and progress bar setting
 # --cpu_display (name, speed, tiny, on, off) (bar, infobar, barinfo, off)
-cpu_shorthand="off"
+cpu_shorthand="on"
 cpu_display="off"
 
 # CPU Cores
@@ -120,14 +132,14 @@ gpu_shorthand="on"
 # Display refresh rate next to each monitor
 # Unsupported on Windows
 # --refresh_rate on/off
-refresh_rate="off"
+refresh_rate="on"
 
 
 # Gtk Theme / Icons
 
 # Shorten output (Hide [GTK2] etc)
 # --gtk_shorthand on/off
-gtk_shorthand="off"
+gtk_shorthand="on"
 
 
 # Enable/Disable gtk2 theme/icons output
@@ -165,7 +177,7 @@ public_ip_host="http://ident.me"
 
 # Print the Artist and Title on seperate lines
 # --song_shorthand on/off
-song_shorthand="off"
+song_shorthand="on"
 
 
 # Birthday
@@ -190,7 +202,7 @@ birthday_format="+%a %d %b %Y %l:%M %p"
 # Color block range
 # --block_range start end
 start=0
-end=7
+end=15
 
 # Toggle color blocks
 # --color_blocks on/off
@@ -198,7 +210,7 @@ color_blocks="on"
 
 # Color block width
 # --color_block_width num
-block_width=3
+block_width=5
 
 
 # }}}
@@ -227,7 +239,7 @@ line_wrap="off"
 
 # Toggle bold text
 # --bold on/off
-bold="on"
+bold="off"
 
 # Enable/Disable Underline
 # --underline on/off
@@ -235,7 +247,7 @@ underline_enabled="on"
 
 # Underline character
 # --underline_char char
-underline_char="-"
+underline_char=" "
 
 # Prompt height
 # You should only have to change this if your
@@ -251,12 +263,12 @@ prompt_height=1
 
 # Progress bar character
 # --progress_char elapsed_char total_char
-progress_char_elapsed="-"
-progress_char_total="="
+progress_char_elapsed="#"
+progress_char_total="-"
 
 # Progress vorder
 # --progress_border on/off
-progress_border="on"
+progress_border="off"
 
 # Progress bar length in spaces
 # Number of chars long to make the progress bars.
@@ -267,8 +279,8 @@ progress_length="15"
 # When set to distro, uses your distro's logo colors
 # Takes: num, "distro"
 # --progress_colors col col
-progress_color_elapsed="distro"
-progress_color_total="distro"
+progress_color_elapsed=2
+progress_color_total=4
 
 # Customize how the info is displayed.
 # bar: Only the progress bar is displayed.
@@ -279,9 +291,9 @@ progress_color_total="distro"
 # --memory_display bar/infobar/barinfo/off
 # --battery_display bar/infobar/barinfo/off
 # --disk_display bar/infobar/barinfo/off
-memory_display="off"
-battery_display="off"
-disk_display="off"
+memory_display="barinfo"
+battery_display="barinfo"
+disk_display="barinfo"
 
 
 # }}}
