@@ -311,7 +311,7 @@ disk_display="barinfo"
 
 # Image Source
 # --image wall, ascii, /path/to/img, /path/to/dir/, off
-image="wall"
+image="ascii"
 
 # Thumbnail directory
 thumbnail_dir="$HOME/.cache/thumbnails/neofetch"

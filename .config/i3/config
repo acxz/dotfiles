@@ -58,11 +58,11 @@ set $secondary  #AAE72C
 set $tertiary   #BDB410
 set $warning    #80845C
 
-# colors                BORDER      BACKGROUND TEXT        INDICATOR
-client.focused          $primary    $primary   $background $primary
-client.focused_inactive $background $primary   $foreground $background
-client.unfocused        $gray       $gray      $background $secondary
-client.urgent           $warning    $warning   $foreground $warning
+# colors                BORDER      BACKGROUND  TEXT        INDICATOR
+client.focused          $primary    $primary    $background $primary
+client.focused_inactive $background $background $foreground $background
+client.unfocused        $gray       $gray       $background $secondary
+client.urgent           $warning    $warning    $foreground $warning
 
 
 
