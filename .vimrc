@@ -1,6 +1,7 @@
 "Mostly from Amir Salihefendic
 "Some from Arch Linux Wiki
-"
+"Author of file: AkashPatel435
+
 "Tip: Leader is '\'
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
