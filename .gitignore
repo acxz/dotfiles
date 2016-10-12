@@ -1,5 +1,6 @@
 # Exclude all files/directories except the ones I want
-*
+/*
+/.config/*
 
 ### Config file directory
 #
