@@ -64,7 +64,8 @@ client.focused_inactive $background $background $foreground $background
 client.unfocused        $gray       $gray       $background $secondary
 client.urgent           $warning    $warning    $foreground $warning
 
-
+# Open empty container
+bindsym $mod+o open
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal

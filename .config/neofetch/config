@@ -276,7 +276,7 @@ progress_char_total="-"
 
 # Progress vorder
 # --progress_border on/off
-progress_border="off"
+progress_border="on"
 
 # Progress bar length in spaces
 # Number of chars long to make the progress bars.
