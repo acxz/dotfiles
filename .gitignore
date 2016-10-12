@@ -1,26 +1,27 @@
 # Exclude all files/directories except the ones I want
 /*
+!/.config
 /.config/*
 
 ### Config file directory
 #
 # Compton
-!.config/compton.conf.test
+!/.config/compton.conf.test
 #
 # Fonts
-!.config/fontconfig/fonts.conf
+!/.config/fontconfig/fonts.conf
 #
 # GTK 3
-!.config/gtk-3.0/gtk.css
+!/.config/gtk-3.0/gtk.css
 #
 # i3
-!.config/i3/config
+!/.config/i3/config
 #
 # termite
-!.config/termite/config
+!/.config/termite/config
 #
 # neofetch
-!.config/neofetch/config
+!/.config/neofetch/config
 
 # Git related files
 !.gitignore
