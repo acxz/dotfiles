@@ -9,6 +9,8 @@
 !/.config/compton.conf.test
 #
 # Fonts
+!/.config/fontconfig
+/.config/fontconfig/*
 !/.config/fontconfig/fonts.conf
 #
 # GTK 3
