@@ -40,7 +40,15 @@
 !.gtkrc-2.0
 
 # Mozilla Firefox related files
-!.mozilla/chrome/userChrome.css
+!/.mozilla/
+/.mozilla/*
+!/.mozilla/firefox
+/.mozilla/firefox/*
+!/.mozilla/firefox/n1ggxgzt.default
+/.mozilla/firefox/n1ggxgzt.default/*
+!/.mozilla/firefox/n1ggxgzt.default/chrome
+/.mozilla/firefox/n1ggxgzt.default/chrome/*
+!/.mozilla/firefox/n1ggxgzt.default/chrome/userChrome.css
 
 # Vim related files
 !.vimperatorrc

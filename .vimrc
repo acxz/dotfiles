@@ -31,10 +31,11 @@ set background=dark
 " Always show current position
 set ruler
 
-" Highlight current line and row
+" Highlight current line, number, and row
 set cursorline
 set cursorcolumn
 hi CursorLine cterm=None ctermbg=black
+hi CursorLineNR cterm=None ctermbg=yellow ctermfg=black
 hi CursorColumn cterm=None ctermbg=black
 
 " Ignore case when searching

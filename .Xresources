@@ -7,7 +7,7 @@ rofi.bw: 3
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.color-enabled: true
-rofi.color-window: argb:B3464646, argb:FF00AD9C, argb:B3464646
-rofi.color-normal: argb:00000000, argb:FFafffa3, argb:00000000, argb:FF6666ea, argb:FFafffa3
-rofi.color-active: argb:00000000, argb:FFafffa3, argb:00000000, argb:FF6666ea, argb:FFafffa3 
-rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:FF6666ea, argb:FFafffa3
+rofi.color-window: argb:B3464646, argb:FF1FAD83, argb:B3464646
+rofi.color-normal: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1FAD83
+rofi.color-active: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1FAD83
+rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1FAD83
