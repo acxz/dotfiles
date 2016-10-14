@@ -40,7 +40,7 @@
 !.gtkrc-2.0
 
 # Mozilla Firefox related files
-!/.mozilla/
+!/.mozilla
 /.mozilla/*
 !/.mozilla/firefox
 /.mozilla/firefox/*
