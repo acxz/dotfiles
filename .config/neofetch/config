@@ -4,8 +4,6 @@
 # Neofetch config file
 # https://github.com/dylanaraps/neofetch
 
-# TODO - fix song spacing and disk bar and color width 
-
 # Speed up script by not using unicode
 export LC_ALL=C
 export LANG=C
@@ -30,37 +28,39 @@ printinfo () {
     info linebreak
 
     info "cpu     " cpu
-    info "cpu_usg " cpu_usage
+    # info "cpu_usg " cpu_usage
     info "gpu     " gpu
-    info "mem     " memory
+    # info "mem     " memory
     info "disk    " disk
-    info "bat     " battery
-
-    info linebreak
-
-    info "loc_ip  " localip
-    info "pub_ip  " publicip
-
-    info linebreak
-
+    # info "bat     " battery
     info "res     " resolution
+
+    info linebreak
+
+    # info "loc_ip  " localip
+    # info "pub_ip  " publicip
+
+    # info linebreak
+
     # info "de     " de
     info "wm      " wm
     # info "wm theme" wmtheme
     info "theme   " theme
     info "icons   " icons
+    info "term    " term 
     info "font    " font
-    info "term    " term
 
-    info linebreak
+    # info linebreak
 
     # info "users" users
     # info "birthday" birthday
-    info "song    " song
+    # info "song    " song
 
     info linebreak
 
     info cols
+
+    info linebreak
 
 }
 
@@ -74,13 +74,9 @@ kernel_shorthand="on"
 
 # Distro
 
-# Mac OS X hide/show build version
-# --osx_buildversion on/off
-osx_buildversion="on"
-
-# Mac OS X hide/show codename
-# --osx_codename on/off
-osx_codename="on"
+# Shorten the output of distro (tiny, on, off)
+# NOTE: This is only possible on Linux, macOS, and Solaris
+distro_shorthand="on"
 
 # Show 'x86_64' and 'x86' in 'Distro:' output.
 # --os_arch on/off
@@ -98,7 +94,7 @@ uptime_shorthand="off"
 
 # Show the path to $SHELL
 # --shell_path on/off
-shell_path="on"
+shell_path="off"
 
 # Show $SHELL's version
 # --shell_version on/off
@@ -117,6 +113,10 @@ speed_type="max"
 # Set shorthand setting and progress bar setting
 # --cpu_display (name, speed, tiny, on, off) (bar, infobar, barinfo, off)
 cpu_shorthand="off"
+
+# CPU Usage display
+# Set CPU usage display setting
+# --cpu_display bar, infobar, barinfo, off
 cpu_display="barinfo"
 
 # CPU Cores
@@ -129,7 +129,11 @@ cpu_cores="on"
 
 # Shorten output of the getgpu funcion
 # --gpu_shorthand on/off/tiny
-gpu_shorthand="on"
+gpu_shorthand="off"
+
+# Enable/Disable GPU Brand
+# --gpu_brand on/off
+gpu_brand="on"
 
 # Resolution
 
@@ -206,7 +210,7 @@ birthday_format="+%a %d %b %Y %l:%M %p"
 # Color block range
 # --block_range start end
 start=0
-end=7
+end=15
 
 # Toggle color blocks
 # --color_blocks on/off
@@ -257,12 +261,6 @@ underline_enabled="on"
 # --underline_char char
 underline_char=" "
 
-# Prompt height
-# You should only have to change this if your
-# prompt is greater than 2 lines high.
-# --prompt_height num
-prompt_height=1
-
 
 # }}}
 
@@ -311,7 +309,7 @@ disk_display="barinfo"
 
 # Image Source
 # --image wall, ascii, /path/to/img, /path/to/dir/, off
-image="ascii"
+image="wall"
 
 # Thumbnail directory
 thumbnail_dir="$HOME/.cache/thumbnails/neofetch"

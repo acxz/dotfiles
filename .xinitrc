@@ -1,1 +1,1 @@
-exec i3
+unclutter & exec i3
