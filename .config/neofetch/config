@@ -18,22 +18,22 @@ printinfo () {
     info title
     info underline
     
-    info "model   " model
-    info "distro  " distro
-    info "kernel  " kernel
-    info "uptime  " uptime
-    info "pkgs    " packages
-    info "shell   " shell
+    info "model  " model
+    info "distro " distro
+    info "kernel " kernel
+    info "uptime " uptime
+    info "pkgs   " packages
+    info "shell  " shell
 
     info linebreak
 
-    info "cpu     " cpu
+    info "cpu    " cpu
     # info "cpu_usg " cpu_usage
-    info "gpu     " gpu
+    info "gpu    " gpu
     # info "mem     " memory
-    info "disk    " disk
+    info "disk   " disk
     # info "bat     " battery
-    info "res     " resolution
+    info "res    " resolution
 
     info linebreak
 
@@ -43,18 +43,18 @@ printinfo () {
     # info linebreak
 
     # info "de     " de
-    info "wm      " wm
+    info "wm     " wm
     # info "wm theme" wmtheme
-    info "theme   " theme
-    info "icons   " icons
-    info "term    " term 
-    info "font    " font
+    info "theme  " theme
+    info "icons  " icons
+    info "term   " term 
+    info "font   " font
 
     # info linebreak
 
     # info "users" users
     # info "birthday" birthday
-    # info "song    " song
+    # info "song   " song
 
     info linebreak
 
