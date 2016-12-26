@@ -4,8 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-# Manually start vmware-user
-exec --no-startup-id vmware-user
 #
 # i3 config file (v4)
 #
@@ -19,7 +17,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Terminess Powerline 8
+font pango:Terminess Powerline 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -32,11 +30,10 @@ font pango:Terminess Powerline 8
 floating_modifier $mod
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
+exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/anime_night_sky.jpg
 
 # Compton
 # With conf file
-# exec --no-startup-id compton --config ~/.config/compton.conf.test -b
 exec --no-startup-id compton -b
 
 # Eliminate window titlebars
@@ -229,10 +226,10 @@ bindsym $mod+d exec rofi -show run -lines 10
 bindsym $mod+Tab exec rofi -show window
 
 # Binding for lock
-bindsym $mod+Shift+x exec i3lock-fancy -p
+# bindsym $mod+Shift+x exec i3lock-fancy -p
 
 # Binding for clock
-#bindsym $mod+Shift+t exec termite --geometry=40x15 -e tty-clock -b -C 7 -t -s
+# bindsym $mod+Shift+t exec termite --geometry=40x15 -e tty-clock -b -C 7 -t -s
 
 # Open specific applications in floation mode
 # for_window [title="tty-clock"] floating enable

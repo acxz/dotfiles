@@ -5,10 +5,15 @@
 
 ### Config file directory
 #
-# Compton
-!/.config/compton.conf.test
+# bspwm
+!/.config/bspwm
+/.config/bspwm/*
+!/.config/bspwm/bspwmrc
 #
-# Fonts
+# compton
+!/.config/compton.conf
+#
+# fonts
 !/.config/fontconfig
 /.config/fontconfig/*
 !/.config/fontconfig/fonts.conf
@@ -22,6 +27,11 @@
 !/.config/i3
 /.config/i3/*
 !/.config/i3/config
+#
+# sxhkd
+!/.config/sxhkd
+/.config/sxhkd/*
+!/.config/sxhkd/sxhkdrc
 #
 # termite
 !/.config/termite
@@ -44,11 +54,11 @@
 /.mozilla/*
 !/.mozilla/firefox
 /.mozilla/firefox/*
-!/.mozilla/firefox/n1gqxgzt.default
-/.mozilla/firefox/n1gqxgzt.default/*
-!/.mozilla/firefox/n1gqxgzt.default/chrome
-/.mozilla/firefox/n1gqxgzt.default/chrome/*
-!/.mozilla/firefox/n1gqxgzt.default/chrome/userChrome.css
+!/.mozilla/firefox/ekep42w0.default
+/.mozilla/firefox/ekep42w0.default/*
+!/.mozilla/firefox/ekep42w0.default/chrome
+/.mozilla/firefox/ekep42w0.default/chrome/*
+!/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css
 
 # Vim related files
 !.vimperatorrc

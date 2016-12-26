@@ -2,16 +2,16 @@
 "Some from Arch Linux Wiki
 "Author of file: AkashPatel435
 
-"Tip: Leader is '\'
+" Tip: Leader is '\'
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> General
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable filetype plugins
 :filetype plugin on
 :filetype indent on
 
-"Line numbers
+" Line numbers
 set number
 
 " Number of cols (Line Wrap)
@@ -19,7 +19,7 @@ set textwidth=100
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
 colorscheme default
@@ -27,7 +27,7 @@ set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> VIM user interface
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Always show current position
 set ruler
 
@@ -64,7 +64,7 @@ set lazyredraw
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Files, backups, and undo
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off
 set nobackup
 set nowb
@@ -83,7 +83,7 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Moving around, tabs, and windows, and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Save cursor position
@@ -92,7 +92,7 @@ augroup resCur
   autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
-" Move vertically by visual line
+"Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
 
@@ -103,7 +103,7 @@ nnoremap k gk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Folding
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable Folding
 set foldenable
 
@@ -115,5 +115,3 @@ set foldmethod=indent
 
 " Space bar open/closes folds
 nnoremap <space> za
-
-
