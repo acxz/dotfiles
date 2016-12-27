@@ -225,6 +225,14 @@ mode "$mode_gaps_outer" {
 bindsym $mod+d exec rofi -show run -lines 10
 bindsym $mod+Tab exec rofi -show window
 
+# Binding for brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Binding for volume
+bindsym XF86AudioRaiseVolume exec amixer -q -M set Master 1%+
+bindsym XF86AudioLowerVolume exec amixer -q -M set Master 1%-
+
 # Binding for lock
 # bindsym $mod+Shift+x exec i3lock-fancy -p
 
