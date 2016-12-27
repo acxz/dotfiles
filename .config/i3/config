@@ -40,8 +40,8 @@ exec --no-startup-id compton -b
 for_window [class="^.*"] border pixel 0
 
 # Gaps
-gaps inner 10
-gaps outer 10
+gaps inner 20
+# gaps outer 10
 
 # Borders
 for_window [class="^.*"] border pixel 3
