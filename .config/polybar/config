@@ -125,6 +125,7 @@ label-empty-padding = 2
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+strip-wsnumbers = true
 index-sort = true
 wrapping-scroll = false
 
@@ -175,9 +176,9 @@ toggle-off-foreground = #66
 type = internal/xbacklight
 
 format = <label> <bar>
-label = %percentage%
+label = lit : %percentage%
 
-bar-width = 20
+bar-width = 15
 bar-indicator = │
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
@@ -272,7 +273,7 @@ label-muted = mut : %percentage%
 ; format-muted-foreground = ${colors.foreground-alt}
 ; label-muted = mute
 
-bar-volume-width = 20
+bar-volume-width = 15
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -296,9 +297,9 @@ battery = BAT1
 adapter = ACAD
 full-at = 100
 
-label-charging = bat : %percentage% %time%
+label-charging = bat : %percentage% +
 
-label-discharging = bat : %percentage% %time%
+label-discharging = bat : %percentage% -
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
