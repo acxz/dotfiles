@@ -29,7 +29,7 @@ print_info() {
     info "gpu  " gpu
     # info "mem  " memory
     info "dsk  " disk
-    # info "bat  " battery
+    info "bat  " battery
     info "res  " resolution
 
     info line_break

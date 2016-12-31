@@ -16,8 +16,8 @@ bspc config gapless_monocle      true
 bspc config click_to_focus       true
 bspc config focus_follows_pointer true
 
-bspc config normal_border_color  "#6684E1"
-bspc config focused_border_color "#60ac39"
+bspc config normal_border_color  "#d73737"
+bspc config focused_border_color "#d73737"
 bspc config presel_border_color  "#BDB410"
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
@@ -25,5 +25,5 @@ bspc config presel_border_color  "#BDB410"
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
 
-feh --bg-scale /home/apatel435/Pictures/anime_night_sky.jpg
+feh --bg-scale /home/apatel435/Pictures/red_forest.jpg
 /home/apatel435/.config/polybar/launch.sh
