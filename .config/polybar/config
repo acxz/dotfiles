@@ -8,13 +8,21 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
+background = #00000000
+background-alt = #A6000000
+foreground = #afffa3
 foreground-alt = #55
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+
+red = #d73737
+green = #60ac39
+yellow = #cfb017
+blue = #6684e1
+magenta = #7054d4
+cyan = #1fad83
+white = #afffa3
 
 [global/wm]
 margin-top = 0
@@ -22,47 +30,57 @@ margin-bottom = 0
 
 [bar/nsbar]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 1880
-override-redirect = false
+width = 1920
 height = 30
-offset-x = 20
-offset-y = 20
+offset-x = 0
+offset-y = 0
+
+bottom = false
 
 ;background = ${xrdb:color9}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 2
+overline-size = 3
 overline-color = #f00
-underline-size = 2
+underline-size = 3
 underline-color = #00f
 
-border-size = 3
-border-color = #333
+;border-size = 3
+;border-color = #7054d4
 
-spacing = 1
-padding-left = 0
-padding-right = 2
+border-top = 10
+border-top-color = #00000000
+;border-bottom = 10
+;border-bottom-color = #00000000
+border-left = 10
+border-left-color = #00000000
+border-right = 10
+border-right-color = #00000000
+
+spacing = 0
+padding-left = 1
+padding-right = 1
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = Terminus:pixelsize=12;0
-font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
+font-0 = Terminus:pixelsize=14
+font-1 = Terminus:pixelsize=12:fontformat=truetype
+font-2 = Terminus:pixelsize=14
 
-modules-left = mpd
-modules-center = bspwm i3
-modules-right = volume xbacklight memory cpu battery date powermenu
+modules-left = powermenu i3 bspwm
+; modules-center =
+modules-right = mpd volume backlight memory cpu battery date
 
-tray-position = right
-tray-padding = 2
+; tray-position = middle
+; tray-padding = 5
 ;tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+; wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -109,18 +127,18 @@ ws-icon-default = x
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = k
 
 [module/i3]
 type = internal/i3
@@ -129,16 +147,20 @@ strip-wsnumbers = true
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.green}
+label-focused-overline = ${colors.green}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %name%
+label-unfocused-background = ${colors.background-alt}
+label-unfocused-underline = ${colors.magenta}
+label-unfocused-overline = ${colors.magenta}
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-urgent = %name%!
@@ -172,19 +194,24 @@ icon-repeat = 
 toggle-on-foreground = ${colors.primary}
 toggle-off-foreground = #66
 
-[module/xbacklight]
-type = internal/xbacklight
-
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
 format = <label> <bar>
 label = lit : %percentage%
+format-underline = ${colors.blue}
+format-overline = ${colors.blue}
+format-background = ${colors.background-alt}
+format-padding = 1
 
-bar-width = 15
+bar-width = 10
 bar-indicator = │
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.magenta}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -193,19 +220,19 @@ bar-empty-foreground = ${colors.foreground-alt}
 type = internal/cpu
 format = <label>
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = cpu : %percentage%
+format-overline = ${colors.red}
+format-underline = ${colors.red}
+format-background = ${colors.background-alt}
+label = " cpu : %percentage% "
 
 [module/memory]
 type = internal/memory
 format = <label>
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = ram : %percentage_used%
+format-underline = ${colors.magenta}
+format-overline = ${colors.magenta}
+format-background = ${colors.background-alt}
+label = " ram : %percentage_used% "
 
 [module/wlan]
 type = internal/network
@@ -251,11 +278,10 @@ date-alt = "%m-%d-%Y"
 time = %H:%M:%S
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
-
-label = %time% %date%
+format-underline= ${colors.green}
+format-overline= ${colors.green}
+format-background = ${colors.background-alt}
+label = " %time% %date% "
 
 [module/volume]
 type = internal/volume
@@ -266,21 +292,27 @@ mapping = true
 format-volume = <label-volume> <bar-volume>
 label-volume = vlm : %percentage%
 label-volume-foreground = ${root.foreground}
+format-volume-overline = ${colors.cyan}
+format-volume-underline = ${colors.cyan}
+format-volume-background = ${colors.background-alt}
+format-volume-padding = 1
+
 
 format-muted = <label-muted> <bar-volume>
 label-muted = mut : %percentage%
-; format-muted-prefix = " "
-; format-muted-foreground = ${colors.foreground-alt}
-; label-muted = mute
+format-muted-overline = ${colors.cyan}
+format-muted-underline = ${colors.cyan}
+format-muted-background = ${colors.background-alt}
+format-muted-padding = 1
 
-bar-volume-width = 15
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.yellow}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = │
 bar-volume-indicator-font = 2
@@ -297,30 +329,32 @@ battery = BAT1
 adapter = ACAD
 full-at = 100
 
-label-charging = bat : %percentage% +
+label-charging = " bat : %percentage%" 
 
-label-discharging = bat : %percentage% -
+label-discharging = " bat : %percentage%"
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging = <label-charging>
+format-charging-suffix = " ▲ "
+▲↑
+format-charging-suffix-foreground = ${colors.green}
+format-charging-underline = ${colors.yellow}
+format-charging-overline = ${colors.yellow}
+format-charging-background = ${colors.background-alt}
+ ▼↓ 
+format-discharging = <label-discharging>
+format-discharging-suffix = " ▼ "
+format-discharging-suffix-foreground = ${colors.red}
+format-discharging-underline = ${colors.yellow}
+format-discharging-overline = ${colors.yellow}
+format-discharging-background = ${colors.background-alt}
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+label-full = " bat : 100%" 
+format-full = <label-full>
+format-full-suffix = " ▲ "
+format-full-suffix-foreground = ${colors.green}
 format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+format-full-overline = ${self.format-charging-overline}
+format-full-background = ${self.format-charging-background}
 
 [module/temperature]
 type = internal/temperature
@@ -344,26 +378,38 @@ ramp-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 
-label-open = pwr
-label-open-foreground = ${colors.secondary}
-label-close =  cls
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-open = "pwr        "
+label-open-foreground = ${colors.red}
+;label-open-background = ${colors.background-alt}
+label-close = "cls"
+label-close-foreground = ${colors.green}
+;label-close-background = ${colors.background-alt}
 
-menu-0-0 = rbt
+menu-0-0 = "rbt"
+menu-0-0-foreground = ${colors.yellow}
+;menu-0-0-background = ${colors.background-alt}
 menu-0-0-exec = menu-open-1
-menu-0-1 = off
+menu-0-1 = " off"
+menu-0-1-foreground = ${colors.red}
+;menu-0-1-background = ${colors.background-alt}
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cls
+menu-1-0 = "cls"
+menu-1-0-foreground = ${colors.yellow}
+;menu-1-0-background = ${colors.background-alt}
 menu-1-0-exec = menu-open-0
-menu-1-1 = rbt
+menu-1-1 = " rbt"
+menu-1-1-foreground = ${colors.red}
+;menu-1-1-background = ${colors.background-alt}
 menu-1-1-exec = sudo reboot
 
-menu-2-0 = off
+menu-2-0 = "off"
+menu-2-0-foreground = ${colors.red}
+;menu-2-0-background = ${colors.background-alt}
 menu-2-0-exec = sudo poweroff
-menu-2-1 = cls
+menu-2-1 = " cls"
+menu-2-1-foreground = ${colors.yellow}
+;menu-2-1-background = ${colors.background-alt}
 menu-2-1-exec = menu-open-0
 
 ; vim:ft=dosini

@@ -37,7 +37,7 @@ exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
 
 # Compton
 # With conf file
-exec --no-startup-id compton -b
+exec --no-startup-id compton --config /home/apatel435/.config/compton.conf -b
 
 # Eliminate window titlebars
 for_window [class="^.*"] border pixel 0
@@ -46,8 +46,8 @@ for_window [class="^.*"] border pixel 0
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Gaps
-gaps inner 20
-# gaps outer 10
+gaps inner 10
+# gaps outer 40
 
 # Borders
 for_window [class="^.*"] border pixel 3
@@ -136,7 +136,7 @@ bindsym $mod+6 workspace 6: six
 bindsym $mod+7 workspace 7: svn
 bindsym $mod+8 workspace 8: ate
 bindsym $mod+9 workspace 9: nin
-bindsym $mod+0 workspace 10: te"
+bindsym $mod+0 workspace 10: ten
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: one

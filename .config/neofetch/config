@@ -29,7 +29,7 @@ print_info() {
     info "gpu  " gpu
     # info "mem  " memory
     info "dsk  " disk
-    info "bat  " battery
+    # info "bat  " battery
     info "res  " resolution
 
     info line_break
@@ -40,11 +40,10 @@ print_info() {
     # info linebreak
 
     # info "de     " de
-    # info "wndwmngr   " wm
+    # info "wmg   " wm
     # print window manager info manually bc doesnt work
-    prin "$(color 4)wmg   $(color 0) : bspwm"
-    info "mdl  " model
-    # info "wm theme" wm_theme
+    prin "$(color 4)wmg   $(color 0) : i3-gaps"
+    info "wm theme" wm_theme
     info "thm  " theme
     info "icn  " icons
     info "fnt  " font
