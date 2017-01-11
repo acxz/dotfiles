@@ -28,6 +28,22 @@
 /.config/i3/*
 !/.config/i3/config
 #
+# mpd
+!/.config/mpd
+/.config/mpd/*
+!/.config/mpd/mpd.conf
+#
+# ncmpcpp
+!/.config/ncmpcpp
+/.config/ncmpcpp/*
+!/.config/ncmpcpp/config
+!/.config/ncmpcmpp/bindings
+#
+## neofetch
+!/.config/neofetch
+/.config/neofetch/*
+!/.config/neofetch/config
+#
 # polybar
 !/.config/polybar
 /.config/polybar/*
@@ -43,11 +59,6 @@
 !/.config/termite
 /.config/termite/*
 !/.config/termite/config
-#
-# neofetch
-!/.config/neofetch
-/.config/neofetch/*
-!/.config/neofetch/config
 
 # Git related files
 !.gitignore
@@ -65,9 +76,10 @@
 !/.mozilla/firefox/ekep42w0.default/chrome
 /.mozilla/firefox/ekep42w0.default/chrome/*
 !/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css
+#
+!.vimperatorrc
 
 # Vim related files
-!.vimperatorrc
 !.vimrc
 
 # Xorg related files

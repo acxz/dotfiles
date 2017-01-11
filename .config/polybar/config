@@ -31,7 +31,7 @@ margin-bottom = 0
 [bar/nsbar]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 1920
-height = 30
+height = 25
 offset-x = 0
 offset-y = 0
 
@@ -41,9 +41,9 @@ bottom = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 3
+overline-size = 2
 overline-color = #f00
-underline-size = 3
+underline-size = 2
 underline-color = #00f
 
 ;border-size = 3
@@ -64,9 +64,9 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Terminus:pixelsize=14
-font-1 = Terminus:pixelsize=12:fontformat=truetype
-font-2 = Terminus:pixelsize=14
+font-0 = xos4 Terminus:pixelsize=14
+font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype
+font-2 = xos4 Terminus:pixelsize=14
 
 modules-left = powermenu i3 bspwm
 ; modules-center =

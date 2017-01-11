@@ -11,6 +11,10 @@ autoload -Uz compinit
 compinit
 # End of lines add by compinstall 
 
+# Aliases
+alias -r ll="ls -la"
+alias -r cs1331="cd /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331"
+
 # Fish-like syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
