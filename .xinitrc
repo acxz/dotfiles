@@ -1,5 +1,7 @@
 unclutter & 
 
+mpd ~/.config/mpd/mpd.conf
+
 # Here bspwm is kept as default
 session=${1:-i3}
 
