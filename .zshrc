@@ -13,10 +13,13 @@ compinit
 
 # Aliases
 alias -r ll="ls -la"
-alias -r cs1331="cd /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331"
+alias -r gatech="cd /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem"
 
 # Personal bin
 export PATH=~/bin:$PATH
+
+# change some dircolors
+eval "$(dircolors ~/.dircolors)";
 
 # Fish-like syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -68,9 +68,9 @@ font-0 = xos4 Terminus:pixelsize=14
 font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype
 font-2 = xos4 Terminus:pixelsize=14
 
-modules-left = powermenu i3 bspwm
-; modules-center =
-modules-right = mpd volume backlight memory cpu battery date
+modules-left = powermenu i3 bspwm 
+; modules-center = mpd
+modules-right = mpd volume xbacklight memory cpu battery date
 
 ; tray-position = middle
 ; tray-padding = 5
@@ -175,9 +175,14 @@ label-visible-padding = ${self.label-focused-padding}
 [module/mpd]
 type = internal/mpd
 
-format-online = <label-song>  <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
+format-online = <label-song>
+;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
+format-online-underline = ${colors.green}
+format-online-overline = ${colors.green}
+format-online-background = ${colors.background-alt}
+format-online-padding = 1
 
-label-song-maxlen = 25
+label-song-maxlen = 35
 label-song-ellipsis = true
 
 icon-prev = 
@@ -194,7 +199,7 @@ icon-repeat = 
 toggle-on-foreground = ${colors.primary}
 toggle-off-foreground = #66
 
-[module/backlight]
+[module/xbacklight]
 type = internal/backlight
 card = intel_backlight
 enable-scroll = true
