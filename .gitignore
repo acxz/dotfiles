@@ -60,6 +60,9 @@
 /.config/termite/*
 !/.config/termite/config
 
+# Dircolors
+!.dircolors
+
 # Git related files
 !.gitignore
 
