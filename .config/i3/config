@@ -242,14 +242,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # Binding for volume
 bindsym XF86AudioRaiseVolume exec amixer -q -M set Master 1%+
 bindsym XF86AudioLowerVolume exec amixer -q -M set Master 1%-
-# psuedo mute
-bindsym F5 exec amixer -q -M set Master 0
+bindsym F5 exec amixer -q -M set Master toggle
 
 # Binding for next,prev,play/pause
-bindsym F9 exec mpc next
+bindsym F8 exec mpc next
 bindsym F6 exec mpc prev
-bindsym F8 exec mpc play
-bindsym F7 exec mpc pause
+bindsym F7 exec mpc toggle
 
 # Binding for lock
 # bindsym $mod+Shift+x exec i3lockfancy -df Noto-Sans -- scrot -z
