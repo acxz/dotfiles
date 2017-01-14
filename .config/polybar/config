@@ -10,7 +10,12 @@
 [colors]
 background = #00000000
 background-alt = #A6000000
-foreground = #afffa3
+
+; night_sky -   #afffa3
+; meteor -      #88b8e4
+; sunset -      #dbd0b7
+; red_forest -  #eeb1ad
+foreground = #dbd0b7
 foreground-alt = #55
 primary = #ffb52a
 secondary = #e60053
@@ -153,14 +158,14 @@ label-mode-background = ${colors.primary}
 
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.green}
-label-focused-overline = ${colors.green}
+label-focused-underline = ${colors.yellow}
+label-focused-overline = ${colors.yellow}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %name%
 label-unfocused-background = ${colors.background-alt}
-label-unfocused-underline = ${colors.magenta}
-label-unfocused-overline = ${colors.magenta}
+label-unfocused-underline = ${colors.blue}
+label-unfocused-overline = ${colors.blue}
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-urgent = %name%!

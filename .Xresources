@@ -1,3 +1,36 @@
+! Foregrounds
+#define meteor      #88b8e!4
+#define night_sky   #afffa!3
+#define sunset      #dbd0b!7
+#define red_forest  #eeb1a!d
+!
+! Colors
+! black
+*color0:  #20201d
+*color8:  #7d7a68
+! red
+*color1:  #d73737
+*color9:  #d73737
+! green
+*color2:  #60ac39
+*color10: #60ac39
+! yellow
+*color3:  #cfb017
+*color11: #cfb017
+! blue
+*color4:  #6684e1
+*color12: #6684e1
+! magenta
+*color5:  #7054d4
+*color13: #7054d4
+! cyan
+*color6:  #7054d4
+*color14: #7054d4
+! white
+*color7:  #a6a28c
+*color15: #fefbec
+!
+!
 ! ----------------
 ! Rofi Color Theme
 ! ----------------
@@ -7,7 +40,7 @@ rofi.bw: 3
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.color-enabled: true
-rofi.color-window: argb:B3000000, argb:FF1FAD83, argb:B3000000
-rofi.color-normal: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1FAD83
-rofi.color-active: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1FAD83
-rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1FAD83
+rofi.color-window: argb:B3000000, argb:FF7054d4, argb:B3000000
+rofi.color-normal: argb:00000000, argb:FFdbd0b7, argb:00000000, argb:00000000, argb:FF7054d4
+rofi.color-active: argb:00000000, argb:FFdbd0b7, argb:00000000, argb:00000000, argb:FF7054d4
+rofi.color-urgent: argb:00000000, argb:FFdbd0b7, argb:00000000, argb:00000000, argb:FF7054d4

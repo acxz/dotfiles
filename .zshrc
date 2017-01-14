@@ -13,7 +13,9 @@ compinit
 
 # Aliases
 alias -r ll="ls -la"
-alias -r gatech="cd /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem"
+
+gatech="/mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem"
+alias -r gatech="cd $gatech"
 
 # Personal bin
 export PATH=~/bin:$PATH

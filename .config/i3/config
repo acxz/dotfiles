@@ -33,7 +33,7 @@ floating_modifier $mod
 exec sudo netctl start wlp8s0-GTother
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
+exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/sunset.jpg
 
 # Compton
 # With conf file
@@ -53,19 +53,23 @@ gaps inner 10
 for_window [class="^.*"] border pixel 3
 
 # Colors
-set $background #7054d4
-set $foreground #000000
-set $gray       #7054d4
-set $primary    #60ac39
-set $secondary  #7054d4
-set $tertiary   #BDB410
-set $warning    #7054d4
+set $black      #20201d
+set $red        #d73737
+set $green      #60ac39
+set $yellow     #cfb017
+set $blue       #6684e1
+set $magenta    #7054d4
+set $cyan       #1fad83
+
+set $primary    #cfb017
+set $secondary  #6684e1
+set $warning    #d73737
 
 # colors                BORDER      BACKGROUND  TEXT        INDICATOR
-client.focused          $primary    $primary    $background $primary
-client.focused_inactive $background $background $foreground $background
-client.unfocused        $gray       $gray       $background $secondary
-client.urgent           $warning    $warning    $foreground $warning
+client.focused          $primary    $primary    $primary    $primary
+client.focused_inactive $secondary  $secondary  $secondary  $secondary
+client.unfocused        $secondary  $secondary  $secondary  $secondary
+client.urgent           $warning    $warning    $warning    $warning
 
 # Open empty container
 bindsym $mod+o open
