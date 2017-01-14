@@ -206,7 +206,7 @@ cpu_cores="physical"
 # Example:
 # on:  'Intel i7-6500U (4) @ 3.1GHz [27.2°C]'
 # off: 'Intel i7-6500U (4) @ 3.1GHz'
-cpu_temp="on"
+cpu_temp="off"
 
 
 # GPU
@@ -415,7 +415,7 @@ color_blocks="on"
 # Default:  '3'
 # Values:   'num'
 # Flag:     --block_width
-block_width=5
+block_width=4
 
 # Color block height in lines
 #
@@ -454,7 +454,7 @@ bar_border="off"
 # Default:  '15'
 # Values:   'num'
 # Flag:     --bar_length
-bar_length=15
+bar_length=10
 
 # Progress bar colors
 # When set to distro, uses your distro's logo colors.

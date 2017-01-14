@@ -187,7 +187,7 @@ format-online-overline = ${colors.green}
 format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
-label-song-maxlen = 35
+label-song-maxlen = 50
 label-song-ellipsis = true
 
 icon-prev = 
@@ -209,7 +209,7 @@ type = internal/backlight
 card = intel_backlight
 enable-scroll = true
 format = <label> <bar>
-label = lit : %percentage%
+label = lit : %percentage%%
 format-underline = ${colors.blue}
 format-overline = ${colors.blue}
 format-background = ${colors.background-alt}
@@ -233,7 +233,7 @@ interval = 2
 format-overline = ${colors.red}
 format-underline = ${colors.red}
 format-background = ${colors.background-alt}
-label = " cpu : %percentage% "
+label = " cpu : %percentage%% "
 
 [module/memory]
 type = internal/memory
@@ -300,7 +300,7 @@ type = internal/volume
 mapping = true
 
 format-volume = <label-volume> <bar-volume>
-label-volume = vlm : %percentage%
+label-volume = vlm : %percentage%%
 label-volume-foreground = ${root.foreground}
 format-volume-overline = ${colors.cyan}
 format-volume-underline = ${colors.cyan}
@@ -309,7 +309,7 @@ format-volume-padding = 1
 
 
 format-muted = <label-muted> <bar-volume>
-label-muted = mut : %percentage%
+label-muted = mut : %percentage%%
 format-muted-overline = ${colors.cyan}
 format-muted-underline = ${colors.cyan}
 format-muted-background = ${colors.background-alt}
@@ -339,9 +339,9 @@ battery = BAT1
 adapter = ACAD
 full-at = 100
 
-label-charging = " bat : %percentage%" 
+label-charging = " bat : %percentage%%" 
 
-label-discharging = " bat : %percentage%"
+label-discharging = " bat : %percentage%%"
 
 format-charging = <label-charging>
 format-charging-suffix = " ▲ "
