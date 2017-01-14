@@ -242,9 +242,17 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # Binding for volume
 bindsym XF86AudioRaiseVolume exec amixer -q -M set Master 1%+
 bindsym XF86AudioLowerVolume exec amixer -q -M set Master 1%-
+# psuedo mute
+bindsym F5 exec amixer -q -M set Master 0
+
+# Binding for next,prev,play/pause
+bindsym F9 exec mpc next
+bindsym F6 exec mpc prev
+bindsym F8 exec mpc play
+bindsym F7 exec mpc pause
 
 # Binding for lock
-bindsym $mod+Shift+x exec i3lockfancy -df Noto-Sans -- scrot -z
+# bindsym $mod+Shift+x exec i3lockfancy -df Noto-Sans -- scrot -z
 
 # Binding for clock
 # bindsym $mod+Shift+t exec termite --geometry=40x15 -e tty-clock -b -C 7 -t -s
