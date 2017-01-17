@@ -47,7 +47,7 @@ print_info() {
     info "thm  " theme
     info "icn  " icons
     info "fnt  " font
-    info "trm  " term
+    lnfo "trm  " term
 
     # info "Song" song
     # info "Users" users

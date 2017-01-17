@@ -17,8 +17,6 @@ background-alt = #A6000000
 ; red_forest -  #eeb1ad
 foreground = #dbd0b7
 foreground-alt = #55
-primary = #ffb52a
-secondary = #e60053
 alert = #bd2c40
 
 red = #d73737
@@ -27,7 +25,11 @@ yellow = #cfb017
 blue = #6684e1
 magenta = #7054d4
 cyan = #1fad83
-white = #afffa3
+white = #dbd0b7
+
+primary = #cfb017
+secondary = #6684e1
+
 
 [global/wm]
 margin-top = 0
@@ -54,13 +56,13 @@ underline-color = #00f
 ;border-size = 3
 ;border-color = #7054d4
 
-border-top = 10
+border-top-size = 10
 border-top-color = #00000000
 ;border-bottom = 10
-;border-bottom-color = #00000000
-border-left = 10
+border-bottom-color = #00000000
+border-left-size = 10
 border-left-color = #00000000
-border-right = 10
+border-right-size  = 10
 border-right-color = #00000000
 
 spacing = 0
@@ -74,8 +76,8 @@ font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype
 font-2 = xos4 Terminus:pixelsize=14
 
 modules-left = powermenu i3 bspwm 
-; modules-center = mpd
-modules-right = mpd volume xbacklight memory cpu battery date
+modules-center = mpd
+modules-right = volume xbacklight memory cpu battery date 
 
 ; tray-position = middle
 ; tray-padding = 5
@@ -158,14 +160,14 @@ label-mode-background = ${colors.primary}
 
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.yellow}
-label-focused-overline = ${colors.yellow}
+label-focused-underline = ${colors.primary}
+label-focused-overline = ${colors.primary}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %name%
 label-unfocused-background = ${colors.background-alt}
-label-unfocused-underline = ${colors.blue}
-label-unfocused-overline = ${colors.blue}
+label-unfocused-underline = ${colors.secondary}
+label-unfocused-overline = ${colors.secondary}
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-urgent = %name%!
@@ -182,8 +184,8 @@ type = internal/mpd
 
 format-online = <label-song>
 ;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
-format-online-underline = ${colors.green}
-format-online-overline = ${colors.green}
+format-online-underline = ${colors.primary}
+format-online-overline = ${colors.primary}
 format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
@@ -208,7 +210,7 @@ toggle-off-foreground = #66
 type = internal/backlight
 card = intel_backlight
 enable-scroll = true
-format = <label> <bar>
+format = <label>
 label = lit : %percentage%%
 format-underline = ${colors.blue}
 format-overline = ${colors.blue}
@@ -242,7 +244,7 @@ interval = 2
 format-underline = ${colors.magenta}
 format-overline = ${colors.magenta}
 format-background = ${colors.background-alt}
-label = " ram : %percentage_used% "
+label = " ram : %percentage_used%% "
 
 [module/wlan]
 type = internal/network
@@ -299,7 +301,7 @@ type = internal/volume
 ; Use volume mapping, similar to amixer -M
 mapping = true
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 label-volume = vlm : %percentage%%
 label-volume-foreground = ${root.foreground}
 format-volume-overline = ${colors.cyan}
@@ -308,7 +310,7 @@ format-volume-background = ${colors.background-alt}
 format-volume-padding = 1
 
 
-format-muted = <label-muted> <bar-volume>
+format-muted = <label-muted>
 label-muted = mut : %percentage%%
 format-muted-overline = ${colors.cyan}
 format-muted-underline = ${colors.cyan}
@@ -339,18 +341,18 @@ battery = BAT1
 adapter = ACAD
 full-at = 100
 
-label-charging = " bat : %percentage%%" 
+label-charging = " bat : %percentage%%"
 
 label-discharging = " bat : %percentage%%"
 
 format-charging = <label-charging>
 format-charging-suffix = " ▲ "
-▲↑
+
 format-charging-suffix-foreground = ${colors.green}
 format-charging-underline = ${colors.yellow}
 format-charging-overline = ${colors.yellow}
 format-charging-background = ${colors.background-alt}
- ▼↓ 
+ 
 format-discharging = <label-discharging>
 format-discharging-suffix = " ▼ "
 format-discharging-suffix-foreground = ${colors.red}

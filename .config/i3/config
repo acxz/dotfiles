@@ -249,6 +249,9 @@ bindsym F8 exec mpc next
 bindsym F6 exec mpc prev
 bindsym F7 exec mpc toggle
 
+# Binding for screenshot
+bindsym Print exec scrot -q 100 -e 'mv $f ~/Pictures/shots/'
+
 # Binding for lock
 # bindsym $mod+Shift+x exec i3lockfancy -df Noto-Sans -- scrot -z
 
