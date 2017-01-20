@@ -5,14 +5,15 @@ font = xos4 Terminus 12
 
 # special
 # night sky -   #afffa3 
-# meteor -      #88b8e4
+# meteor -      #b3a6d4
 # sunset -      #dbd0b7
 # red forest -  #eeb1ad
 
-foreground      = #dbd0b7
-foreground_bold = #dbd0b7
-cursor          = #dbd0b7
-background      = rgba(0, 0, 0, 0.65)
+foreground      = #afffa3
+foreground_bold = #afffa3
+cursor          = #afffa3
+# background      = rgba(56, 60, 74, 0.999)
+background = rgba(30, 40, 50, 0.9)
 
 # black
 color0  = #20201d
@@ -44,4 +45,4 @@ color14 = #1fad83
 
 # white
 color7  = #a6a28c
-color15 = #fefbec
+color15 = #afffa3

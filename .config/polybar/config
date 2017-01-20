@@ -9,13 +9,13 @@
 
 [colors]
 background = #00000000
-background-alt = #A6000000
+background-alt = #E61E2832
 
 ; night_sky -   #afffa3
-; meteor -      #88b8e4
+; meteor -      #b3a6d4
 ; sunset -      #dbd0b7
 ; red_forest -  #eeb1ad
-foreground = #dbd0b7
+foreground = #afffa3
 foreground-alt = #55
 alert = #bd2c40
 
@@ -27,8 +27,8 @@ magenta = #7054d4
 cyan = #1fad83
 white = #dbd0b7
 
-primary = #cfb017
-secondary = #6684e1
+primary = #1fad83
+secondary = #7054d4
 
 
 [global/wm]
@@ -302,7 +302,7 @@ type = internal/volume
 mapping = true
 
 format-volume = <label-volume>
-label-volume = vlm : %percentage%%
+label-volume = vol : %percentage%%
 label-volume-foreground = ${root.foreground}
 format-volume-overline = ${colors.cyan}
 format-volume-underline = ${colors.cyan}

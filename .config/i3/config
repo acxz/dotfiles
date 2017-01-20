@@ -33,7 +33,7 @@ floating_modifier $mod
 exec sudo netctl start wlp8s0-GTother
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/sunset.jpg
+exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
 
 # Compton
 # With conf file
@@ -61,8 +61,8 @@ set $blue       #6684e1
 set $magenta    #7054d4
 set $cyan       #1fad83
 
-set $primary    #cfb017
-set $secondary  #6684e1
+set $primary    #1fad83
+set $secondary  #7054d4
 set $warning    #d73737
 
 # colors                BORDER      BACKGROUND  TEXT        INDICATOR
