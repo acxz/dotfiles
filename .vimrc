@@ -37,6 +37,7 @@ set cursorcolumn
 hi CursorLine cterm=None ctermbg=black
 hi CursorLineNR cterm=None ctermbg=yellow ctermfg=black
 hi CursorColumn cterm=None ctermbg=black
+set colorcolumn=81
 
 " Ignore case when searching
 set ignorecase
@@ -115,3 +116,6 @@ set foldmethod=indent
 
 " Space bar open/closes folds
 nnoremap <space> za
+
+" Set folding background color
+hi Folded ctermbg=none

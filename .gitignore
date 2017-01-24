@@ -3,6 +3,11 @@
 !/.config
 /.config/*
 
+# TODO file
+!/Desktop
+/Desktop/*
+!/Desktop/todo
+
 ### Config file directory
 #
 # bspwm
@@ -39,7 +44,7 @@
 !/.config/ncmpcpp/config
 !/.config/ncmpcmpp/bindings
 #
-## neofetch
+# neofetch
 !/.config/neofetch
 /.config/neofetch/*
 !/.config/neofetch/config

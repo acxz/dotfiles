@@ -129,23 +129,38 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-ws-icon-default = x
+format = <label-state> <label-mode>
+strip-wsnumbers = true
+index-sort = true
 
-label-focused = %index%
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline = ${colors.primary}
+label-focused-overline = ${colors.primary}
 label-focused-padding = 1
 
-label-occupied = %index%
+label-occupied= %name%
+label-occupied-background = ${colors.background-alt}
+label-occupied-underline = ${colors.secondary}
+label-occupied-overline = ${colors.secondary}
 label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = k
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+# label-empty = %name%
+# label-empty-foreground = ${colors.foreground-alt}
+# label-empty-padding = 1
 
 [module/i3]
 type = internal/i3
