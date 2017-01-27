@@ -11,6 +11,10 @@ autoload -Uz compinit
 compinit
 # End of lines add by compinstall 
 
+# Custom prompt TODO
+export PS1="\[\033[0;34m\]\w \[\033[33m\]❯❯❱\\[\033[m\] "
+
+
 # Change tty colors
 if [ "$TERM" = "linux" ]; then
     echo -en "\e]P01E2832" #black
@@ -34,6 +38,9 @@ fi
 
 # Aliases
 alias -r ll="ls -la"
+
+alias -r weather="curl wttr.in"
+alias -r moon="curl wttr.in/Moon"
 
 alias -r checkstyle622="java -jar /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331/checkstyle/checkstyle-6.2.2.jar"
 

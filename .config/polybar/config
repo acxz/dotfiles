@@ -10,6 +10,7 @@
 [colors]
 background = #00000000
 background-alt = #E61E2832
+#background-alt = #001E2832
 
 ; night_sky -   #afffa3
 ; meteor -      #b3a6d4
@@ -71,9 +72,9 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = xos4 Terminus:pixelsize=14
-font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype
-font-2 = xos4 Terminus:pixelsize=14
+font-0 = xos4 Terminus:pixelsize=14;2
+font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype;1
+font-2 = xos4 Terminus:pixelsize=14;2
 
 modules-left = powermenu i3 bspwm 
 modules-center = mpd
@@ -158,9 +159,9 @@ label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-# label-empty = %name%
-# label-empty-foreground = ${colors.foreground-alt}
-# label-empty-padding = 1
+label-empty = " "
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
 
 [module/i3]
 type = internal/i3
@@ -299,10 +300,10 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 1
 
-date = "%m-%d-%Y"
-date-alt = "%m-%d-%Y"
+date = "%a %m/%d/%y"
+date-alt = "%m/%d/%Y"
 
-time = %H:%M:%S
+time = %H:%M
 time-alt = %H:%M:%S
 
 format-underline= ${colors.green}

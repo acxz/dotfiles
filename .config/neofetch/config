@@ -28,8 +28,8 @@ print_info() {
     prin "$(color 4)gpu $(color 0): NVIDIA GeForce GTX 960M"
     # info "gpu  " gpu
     # Need to fix formatting until then:
-    prin "$(color 4)dsk $(color 0): 8.1G / 79G (11%)"
-    #info "dsk  " disk
+    # prin "$(color 4)dsk $(color 0): 8.1G / 79G (11%)"
+    info "dsk  " disk
     info "res  " resolution
 
     info line_break

@@ -27,31 +27,7 @@ sxhd
 --empty node
 
 firefox
--vimperatorrc
--css
-tabs?
--home page
---gatech
----t square
----buzzport
----mail.gatech.edu
----piazza
---redit
----pokemon
----unixporn
----anime
----halo
---music
----soundcloud
----spotify
----youtube
---anime
----kissanime
----9anime
---pokemon
----serebii
----pokemonshowdown
----github
+css
 
 music
 -ncmpcpp config
@@ -65,8 +41,6 @@ dunst
 lock screen
 
 tmux
-
-?login manager?
 
 themes
 -red

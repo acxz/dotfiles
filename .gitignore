@@ -64,6 +64,12 @@
 !/.config/termite
 /.config/termite/*
 !/.config/termite/config
+#
+# webhub 
+!/.config/webhub
+/.config/webhub/*
+!/.config/webhub/webhub.html
+!/.config/webhub/webhub.css
 
 # Dircolors
 !.dircolors
