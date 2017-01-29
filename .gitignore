@@ -3,11 +3,6 @@
 !/.config
 /.config/*
 
-# TODO file
-!/Desktop
-/Desktop/*
-!/Desktop/todo
-
 ### Config file directory
 #
 # bspwm
@@ -17,6 +12,11 @@
 #
 # compton
 !/.config/compton.conf
+#
+# dunst
+!/.config/dunst
+/.config/dunst/*
+!/.config/dunst/dunstrc
 #
 # fonts
 !/.config/fontconfig
@@ -64,6 +64,14 @@
 !/.config/termite
 /.config/termite/*
 !/.config/termite/config
+#
+# vis
+!/.config/vis
+/.config/vis/*
+!/.config/vis/config
+!/.config/vis/colors
+/.config/vis/colors/*
+!/.config/vis/colors/nightsky
 
 # Dircolors
 !.dircolors

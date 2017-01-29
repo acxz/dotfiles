@@ -1,6 +1,7 @@
 unclutter & 
 
 mpd ~/.config/mpd/mpd.conf
+pulseaudio --start
 
 # Here bspwm is kept as default
 session=${1:-i3}
