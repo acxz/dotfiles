@@ -5,15 +5,13 @@
 
 # 2016 Oliver Kraitschy - http://okraits.de
 
-OPTIONS="suspend\nexitx\nreboot\nshutdown"
+OPTIONS="lock\nsuspend\nexitx\nreboot\nshutdown"
 
 # source configuration or use default values
 if [ -f $HOME/.config/rofi/power-config]; then
   source $HOME/.config/rofi/power-config
 else
-  LAUNCHER="rofi -width 10 -lines 4 -dmenu -i -p power:"
-  USE_LOCKER="false"
-  LOCKER="i3lock"
+  LAUNCHER="rofi -width 10 -lines 5 -dmenu -i -p power:"
 fi
 
 # Show exit wm option if exit command is provided as an argument
@@ -34,11 +32,15 @@ then
       shutdown)
         systemctl poweroff
         ;;
-      suspend)
-        $($USE_LOCKER) && "$LOCKER"; systemctl suspend
+      lock)
+        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=6684e1ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
         ;;
       exitx)
         i3-msg exit
+        ;;
+      suspend)
+        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=6684e1ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff;
+        systemctl suspend
         ;;
       *)
         ;;
