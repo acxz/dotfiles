@@ -10,6 +10,11 @@
 /.config/bspwm/*
 !/.config/bspwm/bspwmrc
 #
+# cava
+!/.config/cava
+/.config/cava/*
+!/.config/cava/config
+#
 # compton
 !/.config/compton.conf
 #
@@ -54,6 +59,11 @@
 /.config/polybar/*
 !/.config/polybar/config
 !/.config/polybar/launch.sh
+#
+# rofi
+!/.config/rofi
+/.config/rofi/*
+!/.config/rofi/power
 #
 # sxhkd
 !/.config/sxhkd
