@@ -1,2 +1,4 @@
 set gui=none
 set gui=tabs
+
+:inoremap jj <esc>

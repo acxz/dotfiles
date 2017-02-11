@@ -139,8 +139,8 @@ bindsym $mod+5 workspace 5: fiv
 bindsym $mod+6 workspace 6: gmp
 bindsym $mod+7 workspace 7: svn
 bindsym $mod+8 workspace 8: ate
-bindsym $mod+9 workspace 9: nin
-bindsym $mod+0 workspace 10: msc
+bindsym $mod+9 workspace 9: com
+bindsym $mod+0 workspace 10: mzc
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: wrk
@@ -151,15 +151,18 @@ bindsym $mod+Shift+5 move container to workspace 5: fiv
 bindsym $mod+Shift+6 move container to workspace 6: gmp
 bindsym $mod+Shift+7 move container to workspace 7: svn
 bindsym $mod+Shift+8 move container to workspace 8: ate
-bindsym $mod+Shift+9 move container to workspace 9: nin
-bindsym $mod+Shift+0 move container to workspace 10: msc
+bindsym $mod+Shift+9 move container to workspace 9: com
+bindsym $mod+Shift+0 move container to workspace 10: mzc
+
+# autoload mzc wrkspc
+# exec --no-startup-id i3-msg 'workspace 1: mzc; exec firefox
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -234,14 +237,17 @@ mode "$mode_gaps_outer" {
 # Binding for rofi
 bindsym $mod+d exec rofi -show run -lines 10
 bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Shift+e exec ~/.config/rofi/power
 
 # Binding for brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+bindsym F9 exec xbacklight -set 1
+bindsym F10 exec xbacklight -set 100
 
 # Binding for volume
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
 bindsym F5 exec pulseaudio-ctl mute
 
 # Binding for next,prev,play/pause
@@ -255,8 +261,4 @@ bindsym Print exec scrot -q 100 -e 'mv $f ~/Pictures/shots/'
 # Binding for lock
 # bindsym $mod+Shift+x exec i3lockfancy -df Noto-Sans -- scrot -z
 
-# Binding for clock
-# bindsym $mod+Shift+t exec termite --geometry=40x15 -e tty-clock -b -C 7 -t -s
-
-# Open specific applications in floation mode
-# for_window [title="tty-clock"] floating enable
+# for_window [class="Plank"] floating enable

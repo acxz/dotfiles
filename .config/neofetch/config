@@ -28,7 +28,7 @@ print_info() {
     prin "$(color 4)gpu $(color 0): NVIDIA GeForce GTX 960M"
     # info "gpu  " gpu
     # Need to fix formatting until then:
-    # prin "$(color 4)dsk $(color 0): 8.1G / 79G (11%)"
+    # prin "$(color 4)dsk $(color 0): 11G / 79G (14%)"
     info "dsk  " disk
     info "res  " resolution
 
@@ -556,7 +556,8 @@ image_backend="ascii"
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-image_source="auto"
+image_source="ascii"
+#image_source="/home/apatel435/Pictures/mnt/thumb_mnt.png"
 
 
 # Ascii Options
@@ -632,14 +633,14 @@ crop_offset="center"
 # Values:  'auto', '00px', '00%', 'none'
 # Flags:   --image_size
 #          --size
-image_size="auto"
+image_size="none"
 
 # Ggap between image and text
 #
 # Default: '3'
 # Values:  'num', '-num'
 # Flag:    --gap
-gap=3
+gap=2
 
 # Image offsets
 # Only works with the w3m backend.
@@ -648,8 +649,8 @@ gap=3
 # Values:  'px'
 # Flags:   --xoffset
 #          --yoffset
-yoffset=0
-xoffset=0
+yoffset=7
+xoffset=7
 
 # Image background color
 # Only works with the w3m backend.

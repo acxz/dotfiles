@@ -1,6 +1,11 @@
 graphics
 -get nvidia to work
 
+touchpad
+-tapping on
+-natural scrolling
+-clickmethod clickfinger
+
 neofetch
 -dsk - eh
 
@@ -11,8 +16,6 @@ zsh
 
 tty
 -font
-
-redshift
 
 bpswm
 
@@ -25,7 +28,6 @@ sxhd
 
 music
 -ncmpcpp config
--cli-viz config
 -fix library
 
 dunst

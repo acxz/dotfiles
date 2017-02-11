@@ -42,10 +42,17 @@ alias -r ll="ls -la"
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
-alias -r checkstyle622="java -jar /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331/checkstyle/checkstyle-6.2.2.jar"
+alias -r checkstyle622="java -jar /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331/checkstyle/checkstyle-6.2.2.jar -a"
 
 gatech="/mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem"
 alias -r gatech="cd $gatech"
+
+# ls after cd
+function cdls() {
+    emulate -L zsh
+    cd "$@"
+    ls -a
+}
 
 # Personal bin
 export PATH=~/bin:$PATH

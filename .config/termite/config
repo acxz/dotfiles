@@ -13,7 +13,7 @@ foreground      = #afffa3
 foreground_bold = #afffa3
 cursor          = #afffa3
 # background      = rgba(56, 60, 74, 0.999)
-background = rgba(30, 40, 50, 0.9)
+background = rgba(30, 40, 50, 1)
 
 # black
 color0  = #20201d

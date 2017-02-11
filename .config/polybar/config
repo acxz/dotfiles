@@ -76,8 +76,8 @@ font-0 = xos4 Terminus:pixelsize=14;2
 font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype;1
 font-2 = xos4 Terminus:pixelsize=14;2
 
-modules-left = powermenu i3 bspwm 
-modules-center = mpd
+modules-left = mpdcontrols mpdinfo
+modules-center = i3
 modules-right = volume xbacklight memory cpu battery date 
 
 ; tray-position = middle
@@ -195,32 +195,40 @@ label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-[module/mpd]
+[module/mpdcontrols]
 type = internal/mpd
 
-format-online = <label-song>
-;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
+format-online = <icon-prev> <toggle> <icon-next> <icon-repeat> <icon-random> <icon-stop>
 format-online-underline = ${colors.primary}
 format-online-overline = ${colors.primary}
 format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
-label-song-maxlen = 50
-label-song-ellipsis = true
+icon-prev = prv
+icon-play = ply
+icon-pause = pws
+icon-next = nxt
+icon-stop = stp
 
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekf = 
-
-icon-random = 
-icon-repeat = 
+icon-random = rdm
+icon-repeat = rpt
 
 toggle-on-foreground = ${colors.primary}
 toggle-off-foreground = #66
+
+[module/mpdinfo]
+type = internal/mpd
+
+label-song = "%title% by %artist%"
+
+format-online = <label-song>
+format-online-underline = ${colors.secondary}
+format-online-overline = ${colors.secondary}
+format-online-background = ${colors.background-alt}
+format-online-padding = 1
+
+label-song-maxlen = 60
+label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/backlight
@@ -359,7 +367,7 @@ full-at = 100
 
 label-charging = " bat : %percentage%%"
 
-label-discharging = " bat : %percentage%%"
+label-discharging = " bat : %time%"
 
 format-charging = <label-charging>
 format-charging-suffix = " ▲ "

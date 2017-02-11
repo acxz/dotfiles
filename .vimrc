@@ -15,7 +15,7 @@
 set number
 
 " Number of cols (Line Wrap)
-set textwidth=100
+set textwidth=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Colors and Fonts
@@ -38,6 +38,7 @@ hi CursorLine cterm=None ctermbg=black
 hi CursorLineNR cterm=None ctermbg=yellow ctermfg=black
 hi CursorColumn cterm=None ctermbg=black
 set colorcolumn=81
+hi ColorColumn ctermbg=yellow
 
 " Ignore case when searching
 set ignorecase
