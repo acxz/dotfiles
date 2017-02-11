@@ -259,6 +259,6 @@ bindsym F7 exec mpc toggle
 bindsym Print exec scrot -q 100 -e 'mv $f ~/Pictures/shots/'
 
 # Binding for lock
-# bindsym $mod+Shift+x exec i3lockfancy -df Noto-Sans -- scrot -z
+bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=6684e1ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
 
 # for_window [class="Plank"] floating enable
