@@ -367,7 +367,7 @@ full-at = 100
 
 label-charging = " bat : %percentage%%"
 
-label-discharging = " bat : %time%"
+label-discharging = " bat : %percentage%%"
 
 format-charging = <label-charging>
 format-charging-suffix = " ▲ "

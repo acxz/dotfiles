@@ -32,7 +32,7 @@ music
 
 dunst
 -battery
--music
+--give time warnings
 
 tmux
 
