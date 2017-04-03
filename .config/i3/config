@@ -74,7 +74,9 @@ bindsym $mod+o open
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-# bindsym $mod+Return exec st
+
+# start firefox
+bindsym $mod+Shift+f exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
