@@ -7,26 +7,12 @@
 
 OPTIONS="lock\nsuspend\nlogout\nreboot\npoweroff"
 
-# source configuration or use default values
-if [ -f $HOME/.config/rofi/power-config ] 
-then
-  source $HOME/.config/rofi/power-config
-else
-  LAUNCHER="rofi -width 10 -lines 5 -dmenu -i -p power:"
-fi
+LAUNCHER="rofi -lines 5 -location 1 -xoffset 7 -yoffset 40 -width 10 -dmenu -i -p power:"
 
-# Show exit wm option if exit command is provided as an argument
-if [ ${#1} -gt 0 ]; then
-  OPTIONS="exitx\n$OPTIONS"
-fi
-
-option=`echo -e $OPTIONS | $LAUNCHER | awk '{print $1}' | tr -d '\r\n'`
+option=`echo -e $OPTIONS | $LAUNCHER`
 if [ ${#option} -gt 0 ]
 then
     case $option in
-      Exit)
-        eval $1
-        ;;
       reboot)
         systemctl reboot
         ;;
@@ -40,10 +26,8 @@ then
         i3-msg exit
         ;;
       suspend)
-        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff;
+        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=dd3cffff --keyhlcolor=60ac39ff --bshlcolor=d73737ff;
         systemctl suspend
-        ;;
-      *)
         ;;
     esac
 fi

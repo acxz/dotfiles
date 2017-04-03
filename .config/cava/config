@@ -94,7 +94,7 @@ method = pulse
 
 # supported colors are: red, green, yellow, magenta, cyan, white, blue, black.
 ; background = black
-; foreground = cyan
+foreground = cyan
 
 
 [smoothing]

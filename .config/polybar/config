@@ -9,27 +9,27 @@
 
 [colors]
 background = #00000000
-background-alt = #E61E2832
+background-alt = ${xrdb:color0}
 #background-alt = #001E2832
 
 ; night_sky -   #afffa3
-; meteor -      #b3a6d4
+; meteor -      #ddc3ff
 ; sunset -      #dbd0b7
 ; red_forest -  #eeb1ad
-foreground = #afffa3
+foreground = ${xrdb:color7}
 foreground-alt = #55
 alert = #bd2c40
 
-red = #d73737
-green = #60ac39
-yellow = #cfb017
-blue = #6684e1
-magenta = #7054d4
-cyan = #1fad83
-white = #dbd0b7
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+yellow = ${xrdb:color3}
+blue = ${xrdb:color4}
+magenta = ${xrdb:color5}
+cyan = ${xrdb:color6}
+white = ${xrdb:color7}
 
-primary = #1fad83
-secondary = #7054d4
+primary = ${xrdb:color6}
+secondary = ${xrdb:color1}
 
 
 [global/wm]
@@ -76,8 +76,8 @@ font-0 = xos4 Terminus:pixelsize=14;2
 font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype;1
 font-2 = xos4 Terminus:pixelsize=14;2
 
-modules-left = mpdcontrols mpdinfo
-modules-center = i3
+modules-left = menutext wintext  mpdcontrols mpdinfo
+modules-center = i3 bspwm
 modules-right = volume xbacklight memory cpu battery date 
 
 ; tray-position = middle
@@ -96,6 +96,8 @@ override-redirect = false
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
+scroll-up = xbacklight -inc 2
+scroll-down = xbacklight -dec 2
 
 [module/xwindow]
 type = internal/xwindow
@@ -166,6 +168,10 @@ label-empty-padding = 1
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+label-state = %name%
+format-state = <label-state>
+format-state-foreground = ${colors.primary}
+label-mode = %mode%
 strip-wsnumbers = true
 index-sort = true
 wrapping-scroll = false
@@ -174,13 +180,17 @@ label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
+label-blank = " "
+
 label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-overline = ${colors.primary}
 label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-padding-background = $(colors.background}
 
 label-unfocused = %name%
+label-unfocused-foreground = #66
 label-unfocused-background = ${colors.background-alt}
 label-unfocused-underline = ${colors.secondary}
 label-unfocused-overline = ${colors.secondary}
@@ -199,8 +209,8 @@ label-visible-padding = ${self.label-focused-padding}
 type = internal/mpd
 
 format-online = <icon-prev> <toggle> <icon-next> <icon-repeat> <icon-random> <icon-stop>
-format-online-underline = ${colors.primary}
-format-online-overline = ${colors.primary}
+format-online-underline = ${colors.secondary}
+format-online-overline = ${colors.secondary}
 format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
@@ -222,18 +232,18 @@ type = internal/mpd
 label-song = "%title% by %artist%"
 
 format-online = <label-song>
-format-online-underline = ${colors.secondary}
-format-online-overline = ${colors.secondary}
+format-online-underline = ${colors.primary}
+format-online-overline = ${colors.primary}
 format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
-label-song-maxlen = 60
+label-song-maxlen = 51
 label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/backlight
 card = intel_backlight
-enable-scroll = true
+;enable-scroll = true
 format = <label>
 label = lit : %percentage%%
 format-underline = ${colors.blue}
@@ -251,6 +261,9 @@ bar-fill-foreground = ${colors.magenta}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
+
+scroll-up = xbacklight -inc 2
+scroll-down = xbacklight -dec 2
 
 [module/cpu]
 type = internal/cpu
@@ -272,7 +285,7 @@ label = " ram : %percentage_used%% "
 
 [module/wlan]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -308,7 +321,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 1
 
-date = "%a %m/%d/%y"
+date = "%a %m/%d"
 date-alt = "%m/%d/%Y"
 
 time = %H:%M
@@ -332,7 +345,6 @@ format-volume-overline = ${colors.cyan}
 format-volume-underline = ${colors.cyan}
 format-volume-background = ${colors.background-alt}
 format-volume-padding = 1
-
 
 format-muted = <label-muted>
 label-muted = mut : %percentage%%
@@ -411,41 +423,88 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
-[module/powermenu]
+[module/menutext]
+type = custom/text
+
+content = mnu
+
+content-underline = ${colors.primary}
+content-overline = ${colors.primary}
+content-background = ${colors.background-alt}
+content-foreground = ${colors.foreground}
+content-padding = 1
+
+click-left = rofi run -show run -lines 10 -location 1 -xoffset 7  -yoffset 40 -width 15 &
+
+click-middle = ~/.config/rofi/power.sh &
+
+click-right = rofi window -show window -lines 5 -location 1 -xoffset 7  -yoffset 40 -width 30 &
+
+//Dangerous
+
+[module/wintext]
+type = custom/text
+
+content = c|fs|ft
+
+content-underline = ${colors.primary}
+content-overline = ${colors.primary}
+content-background = ${colors.background-alt}
+content-foreground = ${colors.foreground}
+content-padding = 1
+
+click-left = i3-msg kill
+
+click-middle = i3-msg fullscreen toggle
+
+click-right = i3-msg floating toggle
+
+[module/winmenu]
 type = custom/menu
 
-label-open = "pwr        "
-label-open-foreground = ${colors.red}
-;label-open-background = ${colors.background-alt}
-label-close = "cls "
-label-close-foreground = ${colors.green}
-;label-close-background = ${colors.background-alt}
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
 
-menu-0-0 = "rbt"
-menu-0-0-foreground = ${colors.yellow}
-;menu-0-0-background = ${colors.background-alt}
+menu-0-0 = Browsers
 menu-0-0-exec = menu-open-1
-menu-0-1 = " off"
-menu-0-1-foreground = ${colors.red}
-;menu-0-1-background = ${colors.background-alt}
-menu-0-1-exec = menu-open-2
+menu-0-2 = Multimedia
+menu-0-2-exec = menu-open-3
 
-menu-1-0 = "cls"
-menu-1-0-foreground = ${colors.yellow}
-;menu-1-0-background = ${colors.background-alt}
-menu-1-0-exec = menu-open-0
-menu-1-1 = " rbt"
-menu-1-1-foreground = ${colors.red}
-;menu-1-1-background = ${colors.background-alt}
-menu-1-1-exec = sudo reboot
+menu-1-0 = Firefox
+menu-1-0-exec = firefox &
+menu-1-1 = Chromium
+menu-1-1-exec = chromium &
 
-menu-2-0 = "off"
-menu-2-0-foreground = ${colors.red}
-;menu-2-0-background = ${colors.background-alt}
-menu-2-0-exec = sudo poweroff
-menu-2-1 = " cls"
-menu-2-1-foreground = ${colors.yellow}
-;menu-2-1-background = ${colors.background-alt}
-menu-2-1-exec = menu-open-0
+menu-2-0 = Gimp
+menu-2-0-exec = gimp &
+menu-2-1 = Scrot
+menu-2-1-exec = scrot &
+
+[module/xwintext]
+type = custom/text
+
+content = <content-one> <content-two>
+
+content-one = hello
+content-two = hello
+
+content-underline = ${colors.primary}
+content-overline = ${colors.primary}
+content-background = ${colors.background-alt}
+content-foreground = ${colors.foreground}
+content-padding = 1
+
+click-left = rofi run -show run -lines 10 -location 1 -xoffset 7  -yoffset 40 -width 15 &
+
+click-middle = ~/.config/rofi/power.sh &
+
+click-right = rofi window -show window -lines 5 -location 1 -xoffset 7  -yoffset 40 -width 30 &
+
+
 
 ; vim:ft=dosini

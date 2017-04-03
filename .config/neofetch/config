@@ -10,13 +10,15 @@ export LANG=C
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
+    info line_break
+
     info title
 
     info line_break
 
     info "dstr " distro
-    info "krnl " kernel 
-    info "uptm " uptime 
+    info "krnl " kernel
+    info "uptm " uptime
     info "pkgs " packages
     info "shll " shell
 

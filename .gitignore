@@ -1,10 +1,17 @@
 # Exclude all files/directories except the ones I want
 /*
+
+### Bin (scripts)
+!/bin
+/bin/*
+
+# wal
+!/bin/wal
+
+### Config file directory
 !/.config
 /.config/*
 
-### Config file directory
-#
 # bspwm
 !/.config/bspwm
 /.config/bspwm/*
@@ -37,6 +44,8 @@
 !/.config/i3
 /.config/i3/*
 !/.config/i3/config
+!/.config/i3/layout_mzc.sh
+!/.config/i3/workspace_10.json
 #
 # mpd
 !/.config/mpd
@@ -64,6 +73,7 @@
 !/.config/rofi
 /.config/rofi/*
 !/.config/rofi/power
+!/.config/rofi/power.sh
 #
 # sxhkd
 !/.config/sxhkd
@@ -92,7 +102,7 @@
 # GTK 2
 !.gtkrc-2.0
 
-# Mozilla Firefox related files
+# Firefox CSS files
 !/.mozilla
 /.mozilla/*
 !/.mozilla/firefox
@@ -102,7 +112,8 @@
 !/.mozilla/firefox/ekep42w0.default/chrome
 /.mozilla/firefox/ekep42w0.default/chrome/*
 !/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css
-#
+
+# Vimperator
 !.vimperatorrc
 
 # Vim related files

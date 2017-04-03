@@ -1,18 +1,19 @@
-[options] 
+[options]
 font = xos4 Terminus 12
+# allow_bold = false
 
 [colors]
 
 # special
-# night sky -   #afffa3 
-# meteor -      #b3a6d4
-# sunset -      #dbd0b7
-# red forest -  #eeb1ad
+# night sky -   #afffa!3
+# meteor -      #ddc3f!f
+# sunset -      #dbd0b!7
+# red forest -  #eeb1a!d
 
-foreground      = #afffa3
-foreground_bold = #afffa3
-cursor          = #afffa3
-# background      = rgba(56, 60, 74, 0.999)
+# foreground      = #afffa3
+# foreground_bold = #afffa3
+# cursor          = #afffa3
+#background      = rgba(56, 60, 74, 0.999)
 background = rgba(30, 40, 50, 1)
 
 # black

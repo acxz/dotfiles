@@ -1,9 +1,9 @@
 ! Foregrounds
-#define meteor      #b3a6d!4
+#define meteor      #ddc3f!f
 #define night_sky   #afffa!3
 #define sunset      #dbd0b!7
 #define red_forest  #eeb1a!d
-!
+
 ! Colors
 ! black
 *color0:  #20201d
@@ -29,13 +29,13 @@
 ! white
 *color7:  #a6a28c
 *color15: #fefbec
-!
-!
+
+
 ! ----------------
 ! Rofi Color Theme
 ! ----------------
 rofi.width: 20
-rofi.padding: 7 
+rofi.padding: 7
 rofi.bw: 3
 rofi.separator-style: none
 rofi.hide-scrollbar: true

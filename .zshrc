@@ -12,7 +12,7 @@ compinit
 # End of lines add by compinstall 
 
 # Custom prompt TODO
-export PS1="\[\033[0;34m\]\w \[\033[33m\]❯❯❱\\[\033[m\] "
+# export PS1="\[\033[0;34m\]\w \[\033[33m\]❯❯❱\\[\033[m\] "
 
 
 # Change tty colors
@@ -43,9 +43,13 @@ alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
 alias -r checkstyle622="java -jar /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331/checkstyle/checkstyle-6.2.2.jar -a"
+alias -r checkstyle622t="java -jar /mnt/Tosh/CS\ 1331/checkstyle/checkstyle-6.2.2.jar -a"
+alias -r checkstyle622l="java -jar ~/Desktop/cs1331/checkstyle-6.2.2.jar -a"
 
-gatech="/mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem"
-alias -r gatech="cd $gatech"
+export gatech=/mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem
+#alias -r gatech="cd $gatech"
+
+alias -r todoist="nw /home/apatel435/vcs/github/kamhix/todoist-linux"
 
 # ls after cd
 function cdls() {
@@ -56,6 +60,10 @@ function cdls() {
 
 # Personal bin
 export PATH=~/bin:$PATH
+
+# Import colorscheme from wal
+source "$HOME/.cache/wal/colors.sh"
+(wal -r -t &)
 
 # change some dircolors
 eval "$(dircolors ~/.dircolors)";

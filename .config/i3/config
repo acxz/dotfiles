@@ -30,27 +30,25 @@ font pango:xos4 Terminus 12
 floating_modifier $mod
 
 # Wifi
+exec sudo netctl start wlp2s0-GTother
 exec sudo netctl start wlp8s0-GTother
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
+# exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
 
 # Compton
 # With conf file
 exec --no-startup-id compton --config /home/apatel435/.config/compton.conf -b
 
 # Eliminate window titlebars
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Gaps
 gaps inner 10
-# gaps outer 40
-
-# Borders
-for_window [class="^.*"] border pixel 3
+#gaps outer 40
 
 # Colors
 set $black      #20201d
@@ -61,8 +59,8 @@ set $blue       #6684e1
 set $magenta    #7054d4
 set $cyan       #1fad83
 
-set $primary    #1fad83
-set $secondary  #7054d4
+set_from_resource   $primary    i3wm.color6
+set_from_resource   $secondary  i3wm.color1
 set $warning    #d73737
 
 # colors                BORDER      BACKGROUND  TEXT        INDICATOR
@@ -76,6 +74,7 @@ bindsym $mod+o open
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -130,6 +129,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# To have the focus stay on window until manually moved
+focus_follows_mouse no
+
 # switch to workspace
 bindsym $mod+1 workspace 1: wrk
 bindsym $mod+2 workspace 2: fox
@@ -153,9 +155,6 @@ bindsym $mod+Shift+7 move container to workspace 7: svn
 bindsym $mod+Shift+8 move container to workspace 8: ate
 bindsym $mod+Shift+9 move container to workspace 9: com
 bindsym $mod+Shift+0 move container to workspace 10: mzc
-
-# autoload mzc wrkspc
-# exec --no-startup-id i3-msg 'workspace 1: mzc; exec firefox
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -190,7 +189,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Change gaps on the fly 
+# Change gaps on the fly
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -242,8 +241,8 @@ bindsym $mod+Shift+e exec ~/.config/rofi/power
 # Binding for brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2
-bindsym F9 exec xbacklight -set 1
-bindsym F10 exec xbacklight -set 100
+bindsym F11 exec xbacklight -set 1
+bindsym F12 exec xbacklight -set 100
 
 # Binding for volume
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
@@ -259,10 +258,11 @@ bindsym F7 exec mpc toggle
 bindsym Print exec scrot -q 100 -e 'mv $f ~/Pictures/shots/'
 
 # Binding for lock
-bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=6684e1ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
+bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
 
 # Binding for redshift
-bindsym Shift+XF86MonBrightnessDown exec redshift -O 3700
+bindsym Shift+XF86MonBrightnessDown exec redshift -O 1500
 bindsym Shift+XF86MonBrightnessUp exec redshift -x
 
-# for_window [class="Plank"] floating enable
+# BInding for mzc
+bindsym Control+$mod+0 exec ~/.config/i3/layout_mzc.sh

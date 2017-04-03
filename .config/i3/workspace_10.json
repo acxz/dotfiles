@@ -1,0 +1,70 @@
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1019,
+       "width": 1894,
+       "x": 0,
+       "y": 0
+    },
+    "name": "WebHub - Vimperator",
+    "percent": 0.701587648875318,
+    "swallows": [
+       {
+        "class": "^Firefox$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.298412351124682,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 398,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Pulse8 - Zen Mix III",
+            "percent": 0.766122479683847,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 398,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cava",
+            "percent": 0.233877520316153,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
