@@ -3,17 +3,26 @@ vcs
 --users
 ---repo
 
+sysinfo
+-make own sysinfo like neofetch
+
+mouse pad settings
+
 gtk
 -change colors on the fly
+-maybe use wpgtk for this?
 
 polybar
 -borders
 -gaps b/t wrkspc
--jap char
+-c|fs|ft
+
+redshift
+-change value dynamically
 
 -termite
 -vte
--bold / intensity
+-bold / intensity (what is bold even)
 
 vim
 -lightline
@@ -29,7 +38,6 @@ xrandr -o switcher script
 
 neofetch
 -dsk - eh
--gpu - eh
 -ascii art format
 -colors go under everything
 
@@ -38,16 +46,24 @@ zsh
 -cd allusers colors
 
 tty
--font
+-blinking block cursor
+-dvtm
+--config
+--status bar
+-pictures and movies (this is hard)
+--maybe get them to not be full screen
 
-i3
+i3 (maybe just move away from i3)
 -open empty workspaces via click
+-floating windows snapping via click
+--change coordinates in divvy script
+-would love hot corners
+-divvy
 
 bpswm/sxhd
 --that one gif
 --empty node
 --empty workspace
--try plank
 -jgmenu -??
 
 windowchef
@@ -59,18 +75,24 @@ music
 -fix library
 
 dunst
--battery
+-battery (kinda really need 2 do this getting annoying)
 --give time warnings
 
 login ??
--use lock screen
+-use lock scren
 
-tmux
+lock screen
+-update with new screenshot
 
 themes
--wal
+-pywal
 --gtk
 --vim lightline colors
 --termite foreground bold
+--lock
 
 weechat
+
+mutt
+
+I kinda want to make a radar app for linux

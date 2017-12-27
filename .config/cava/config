@@ -5,9 +5,9 @@
 
 # smoothing mode, can be normal, scientific or waves.
 mode = normal
- 
+
 # Framerate Default: 60. Accepts only non-negative values.
-; framerate = 60 
+; framerate = 60
 
 # Sensitivity in  %. If you think the bars are to low/response is to little, try
 # increasing this value 200 means double height. Accepts only non-negative values.
@@ -20,7 +20,7 @@ overshoot = 30
 
 # The number of bars (0-200). 0 (default) sets it to auto (fill up console).
 # width of bars and space between bars in number of characters. Default width 3 and space 1.
-bars = 0 
+bars = 0
 bar_width = 2
 bar_spacing = 1
 
@@ -108,7 +108,7 @@ monstercat = 1
 
 # Set gravity multiplier for "drop off". Higher values means bars will drop faster. 
 # Accepts only non-negative values. 0.5 means half gravity, 2 means double. Set to 0 to disable "drop off".
-gravity = 2
+gravity = 100
 
 
 # In bar height, bars that would have been lower that this will not be drawn.

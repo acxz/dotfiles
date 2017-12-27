@@ -5,7 +5,8 @@ sxhkd &
 compton -b
 
 # bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor -d "wrk" "fox" "tre" "for" "fiv" "gmp" "svn" "ate" "nin" "msc"
+# bspc monitor -d "wrk" "fox" "tre" "for" "fiv" "gmp" "svn" "ate" "com" "mzc"
+bspc monitor -d "wrk" "fox" "com" "mzc"
 
 bspc config border_width         3
 bspc config window_gap          10

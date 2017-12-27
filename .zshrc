@@ -34,6 +34,7 @@ if [ "$TERM" = "linux" ]; then
     echo -en "\e]P7A6A28C" #lightgrey
     echo -en "\e]PFFEFBEC" #white
     clear #for background artifacting
+    setfont ter-124n
 fi
 
 # Aliases
@@ -42,12 +43,11 @@ alias -r ll="ls -la"
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
-alias -r checkstyle622="java -jar /mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem/CS\ 1331/checkstyle/checkstyle-6.2.2.jar -a"
-alias -r checkstyle622t="java -jar /mnt/Tosh/CS\ 1331/checkstyle/checkstyle-6.2.2.jar -a"
-alias -r checkstyle622l="java -jar ~/Desktop/cs1331/checkstyle-6.2.2.jar -a"
-
-export gatech=/mnt/SDXC/School/Georgia\ Tech/Gatech/2\ Sophmore\ 2nd\ Sem
+export gatech=/mnt/SDXC/School/Georgia\ Tech/Gatech/3\ Junior\ 1st\ Sem
 #alias -r gatech="cd $gatech"
+
+# CS 1332
+export CLASSPATH=".:/home/apatel435/Desktop/cs1332/junit/junit-4.12.jar:/home/apatel435/Desktop/cs1332/junit/hamcrest-core-1.3.jar"
 
 alias -r todoist="nw /home/apatel435/vcs/github/kamhix/todoist-linux"
 
@@ -61,7 +61,7 @@ function cdls() {
 # Personal bin
 export PATH=~/bin:$PATH
 
-# Import colorscheme from wal
+## Import colorscheme from wal
 source "$HOME/.cache/wal/colors.sh"
 (wal -r -t &)
 

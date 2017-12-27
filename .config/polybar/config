@@ -10,13 +10,13 @@
 [colors]
 background = #00000000
 background-alt = ${xrdb:color0}
-#background-alt = #001E2832
 
 ; night_sky -   #afffa3
 ; meteor -      #ddc3ff
 ; sunset -      #dbd0b7
 ; red_forest -  #eeb1ad
 foreground = ${xrdb:color7}
+; foreground = #afffa3
 foreground-alt = #55
 alert = #bd2c40
 
@@ -28,65 +28,71 @@ magenta = ${xrdb:color5}
 cyan = ${xrdb:color6}
 white = ${xrdb:color7}
 
+;primary = ${xrdb:color1}
+;secondary = ${xrdb:color5}
+
 primary = ${xrdb:color6}
 secondary = ${xrdb:color1}
-
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
+[settings]
+format-background = ${colors.background-alt}
+
 [bar/nsbar]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 1920
-height = 25
+width = 100%
+height = 2%
 offset-x = 0
 offset-y = 0
 
 bottom = false
 
-;background = ${xrdb:color9}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 2
+overline-size = 3
 overline-color = #f00
-underline-size = 2
+underline-size = 3
 underline-color = #00f
 
 ;border-size = 3
 ;border-color = #7054d4
 
-border-top-size = 10
+border-top-size = 40
 border-top-color = #00000000
 ;border-bottom = 10
 border-bottom-color = #00000000
-border-left-size = 10
+border-left-size = 40
 border-left-color = #00000000
-border-right-size  = 10
+border-right-size  = 40
 border-right-color = #00000000
 
+;radius = 5
 spacing = 0
-padding-left = 1
-padding-right = 1
-module-margin-left = 1
-module-margin-right = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 2
+module-margin-right = 2
 
-font-0 = xos4 Terminus:pixelsize=14;2
-font-1 = xos4 Terminus:pixelsize=12:fontformat=truetype;1
-font-2 = xos4 Terminus:pixelsize=14;2
+font-0 = Fira Mono:pixelsize=16;2
+font-1 = Fira Mono:pixelsize=24:fontformat=truetype;1
+font-2 = Fira Mono:pixelsize=16;2
+font-3 = IPAGothic:pixelsize=16;2
 
-modules-left = menutext wintext  mpdcontrols mpdinfo
+modules-left = menu-apps wintext mpdcontrols mpdinfo
 modules-center = i3 bspwm
-modules-right = volume xbacklight memory cpu battery date 
+modules-right = volume xbacklight battery date
 
-; tray-position = middle
-; tray-padding = 5
+;tray-position = middle
+;tray-padding = 5
 ;tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-; wm-restack = i3
+;wm-restack = i3
 
 override-redirect = false
 
@@ -137,71 +143,81 @@ strip-wsnumbers = true
 index-sort = true
 
 label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = ${colors.foreground}
+;label-mode-background = ${colors.background-alt}
 
-label-focused = %name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
-label-focused-overline = ${colors.primary}
+label-name = %name%
+
+label-focused = %{B#66} %name% %{B-}
+;label-focused-padding = 1
+label-occupied = %{B#0f0} %name% %{B-}
+;abel-occupied-padding = 1
+label-empty = %{B#00f} %name% %{B-}
+;abel-empty-padding = 1
+label-urgent = %{B#00f} %name% %{B-}
+;abel-urgent-padding = 1
+
+
+;label-focused = %name%
+;label-focused-background = ${colors.background-alt}
+;label-focused-underline = ${colors.primary}
+;label-focused-overline = ${colors.primary}
 label-focused-padding = 1
-
-label-occupied= %name%
-label-occupied-background = ${colors.background-alt}
-label-occupied-underline = ${colors.secondary}
-label-occupied-overline = ${colors.secondary}
+;
+;label-occupied= %name%
+;label-occupied-background = ${colors.background-alt}
+;label-occupied-underline = ${colors.secondary}
+;label-occupied-overline = ${colors.secondary}
 label-occupied-padding = 1
-
-label-urgent = %name%!
+;
+;label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
-
-label-visible = %name%
+;
+;label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+;label-visible-underline = ${self.label-focused-underline}
+;label-visible-overline = ${self.label-focused-overline}
 label-visible-padding = ${self.label-focused-padding}
-
-label-empty = " "
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
+;
+;label-empty = %name%
+;label-empty-foreground = #66
+label-empty-background = ${self.label-focused-background}
+;label-empty-underline = ${self.label-occupied-underline}
+;label-empty-overline = ${self.label-occupied-overline}
+label-empty-padding = ${self.label-focused-padding}
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 label-state = %name%
-format-state = <label-state>
-format-state-foreground = ${colors.primary}
 label-mode = %mode%
 strip-wsnumbers = true
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 1
+label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 label-blank = " "
 
 label-focused = %name%
-label-focused-background = ${colors.background-alt}
+;label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-overline = ${colors.primary}
 label-focused-padding = ${module/bspwm.label-focused-padding}
-label-focused-padding-background = $(colors.background}
+;label-focused-padding-background = $(colors.background-alt}
 
 label-unfocused = %name%
-label-unfocused-foreground = #66
-label-unfocused-background = ${colors.background-alt}
 label-unfocused-underline = ${colors.secondary}
 label-unfocused-overline = ${colors.secondary}
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-urgent = %name%!
-label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 label-visible = %name%
-label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
@@ -211,7 +227,6 @@ type = internal/mpd
 format-online = <icon-prev> <toggle> <icon-next> <icon-repeat> <icon-random> <icon-stop>
 format-online-underline = ${colors.secondary}
 format-online-overline = ${colors.secondary}
-format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
 icon-prev = prv
@@ -224,7 +239,7 @@ icon-random = rdm
 icon-repeat = rpt
 
 toggle-on-foreground = ${colors.primary}
-toggle-off-foreground = #66
+toggle-off-foreground = ${colors.secondary}
 
 [module/mpdinfo]
 type = internal/mpd
@@ -234,10 +249,9 @@ label-song = "%title% by %artist%"
 format-online = <label-song>
 format-online-underline = ${colors.primary}
 format-online-overline = ${colors.primary}
-format-online-background = ${colors.background-alt}
 format-online-padding = 1
 
-label-song-maxlen = 51
+label-song-maxlen = 90
 label-song-ellipsis = true
 
 [module/xbacklight]
@@ -248,7 +262,6 @@ format = <label>
 label = lit : %percentage%%
 format-underline = ${colors.blue}
 format-overline = ${colors.blue}
-format-background = ${colors.background-alt}
 format-padding = 1
 
 bar-width = 10
@@ -271,7 +284,6 @@ format = <label>
 interval = 2
 format-overline = ${colors.red}
 format-underline = ${colors.red}
-format-background = ${colors.background-alt}
 label = " cpu : %percentage%% "
 
 [module/memory]
@@ -280,7 +292,6 @@ format = <label>
 interval = 2
 format-underline = ${colors.magenta}
 format-overline = ${colors.magenta}
-format-background = ${colors.background-alt}
 label = " ram : %percentage_used%% "
 
 [module/wlan]
@@ -305,7 +316,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -321,7 +332,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 1
 
-date = "%a %m/%d"
+date = "%a %m/%d/%y"
 date-alt = "%m/%d/%Y"
 
 time = %H:%M
@@ -329,7 +340,6 @@ time-alt = %H:%M:%S
 
 format-underline= ${colors.green}
 format-overline= ${colors.green}
-format-background = ${colors.background-alt}
 label = " %time% %date% "
 
 [module/volume]
@@ -343,14 +353,12 @@ label-volume = vol : %percentage%%
 label-volume-foreground = ${root.foreground}
 format-volume-overline = ${colors.cyan}
 format-volume-underline = ${colors.cyan}
-format-volume-background = ${colors.background-alt}
 format-volume-padding = 1
 
 format-muted = <label-muted>
 label-muted = mut : %percentage%%
 format-muted-overline = ${colors.cyan}
 format-muted-underline = ${colors.cyan}
-format-muted-background = ${colors.background-alt}
 format-muted-padding = 1
 
 bar-volume-width = 10
@@ -373,36 +381,36 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ACAD
+;battery = BAT1
+;adapter = ACAD
+battery = BAT0
+adapter = ADP1
 full-at = 100
 
-label-charging = " bat : %percentage%%"
+label-charging = " bat : %time% (%percentage%%)"
 
-label-discharging = " bat : %percentage%%"
+label-discharging = " bat : %time% (%percentage%%)"
 
 format-charging = <label-charging>
-format-charging-suffix = " ▲ "
+;format-charging-suffix = " ▲ "
+format-charging-suffix = " c "
 
-format-charging-suffix-foreground = ${colors.green}
+;format-charging-suffix-foreground = ${colors.green}
 format-charging-underline = ${colors.yellow}
 format-charging-overline = ${colors.yellow}
-format-charging-background = ${colors.background-alt}
- 
+
 format-discharging = <label-discharging>
-format-discharging-suffix = " ▼ "
-format-discharging-suffix-foreground = ${colors.red}
+format-discharging-suffix = " d "
+;format-discharging-suffix-foreground = ${colors.red}
 format-discharging-underline = ${colors.yellow}
 format-discharging-overline = ${colors.yellow}
-format-discharging-background = ${colors.background-alt}
 
-label-full = " bat : 100%" 
+label-full = " bat : 100%"
 format-full = <label-full>
-format-full-suffix = " ▲ "
-format-full-suffix-foreground = ${colors.green}
+format-full-suffix = " f "
+;format-full-suffix-foreground = ${colors.green}
 format-full-underline = ${self.format-charging-underline}
 format-full-overline = ${self.format-charging-overline}
-format-full-background = ${self.format-charging-background}
 
 [module/temperature]
 type = internal/temperature
@@ -430,7 +438,6 @@ content = mnu
 
 content-underline = ${colors.primary}
 content-overline = ${colors.primary}
-content-background = ${colors.background-alt}
 content-foreground = ${colors.foreground}
 content-padding = 1
 
@@ -449,7 +456,6 @@ content = c|fs|ft
 
 content-underline = ${colors.primary}
 content-overline = ${colors.primary}
-content-background = ${colors.background-alt}
 content-foreground = ${colors.foreground}
 content-padding = 1
 
@@ -459,31 +465,26 @@ click-middle = i3-msg fullscreen toggle
 
 click-right = i3-msg floating toggle
 
-[module/winmenu]
+[module/menu-apps]
 type = custom/menu
 
-; "menu-LEVEL-N" has the same properties as "label-NAME" with
-; the additional "exec" property
-;
-; Available exec commands:
-;   menu-open-LEVEL
-;   menu-close
-; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+format-underline = ${colors.primary}
+format-overline = ${colors.primary}
+format-foreground = ${colors.foreground}
+format-padding = 1
 
-menu-0-0 = Browsers
-menu-0-0-exec = menu-open-1
-menu-0-2 = Multimedia
-menu-0-2-exec = menu-open-3
+label-open = mnu
+label-close = x
+label-separator = " "
 
-menu-1-0 = Firefox
-menu-1-0-exec = firefox &
-menu-1-1 = Chromium
-menu-1-1-exec = chromium &
+expand-right = true
 
-menu-2-0 = Gimp
-menu-2-0-exec = gimp &
-menu-2-1 = Scrot
-menu-2-1-exec = scrot &
+menu-0-0 = app
+menu-0-0-exec = rofi run -show run -lines 10 -location 1 -xoffset 7  -yoffset 40 -width 15 &
+menu-0-1 = tab
+menu-0-1-exec = rofi window -show window -lines 5 -location 1 -xoffset 7  -yoffset 40 -width 30 &
+menu-0-2 = pwr
+menu-0-2-exec = ~/.config/rofi/power.sh &
 
 [module/xwintext]
 type = custom/text
@@ -495,7 +496,6 @@ content-two = hello
 
 content-underline = ${colors.primary}
 content-overline = ${colors.primary}
-content-background = ${colors.background-alt}
 content-foreground = ${colors.foreground}
 content-padding = 1
 

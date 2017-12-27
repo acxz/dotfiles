@@ -127,7 +127,8 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 "Delete trailing spaces after save and return position
-autocmd BufWritePre *.java :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py :call <SID>StripTrailingWhitespaces()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Moving around, tabs, and windows, and buffers
@@ -173,7 +174,7 @@ hi Folded ctermbg=none
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 
 call plug#end()
@@ -184,7 +185,7 @@ call plug#end()
 set noshowmode
 set noruler
 set noshowcmd
-" set laststatus=2
+set laststatus=2
 
 let g:lightline = {
     \ 'colorscheme': 'wombat',

@@ -27,8 +27,8 @@ print_info() {
     info "mdl  " model
     info "cpu  " cpu
     # I like my own
-    prin "$(color 4)gpu $(color 0): NVIDIA GeForce GTX 960M"
-    # info "gpu  " gpu
+    info "gpu  " gpu
+    info "gpu  " gpu_driver
     # Need to fix formatting until then:
     # prin "$(color 4)dsk $(color 0): 11G / 79G (14%)"
     info "dsk  " disk
@@ -545,7 +545,7 @@ disk_display="off"
 # Default:  'ascii'
 # Values:   'ascii', 'caca', 'catimg', 'jp2a', 'iterm2', 'off', 'tycat', 'w3m'
 # Flag:     --backend
-image_backend="ascii"
+image_backend="off"
 
 # Image Source
 #
@@ -558,7 +558,7 @@ image_backend="ascii"
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-image_source="ascii"
+image_source='wallpaper'
 #image_source="/home/apatel435/Pictures/mnt/thumb_mnt.png"
 
 
@@ -635,7 +635,7 @@ crop_offset="center"
 # Values:  'auto', '00px', '00%', 'none'
 # Flags:   --image_size
 #          --size
-image_size="none"
+image_size="auto"
 
 # Ggap between image and text
 #

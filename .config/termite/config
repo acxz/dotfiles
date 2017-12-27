@@ -1,6 +1,8 @@
 [options]
-font = xos4 Terminus 12
-# allow_bold = false
+# font = xos4 Terminus 12
+font = Fira Mono 12
+
+allow_bold = false
 
 [colors]
 
@@ -10,7 +12,7 @@ font = xos4 Terminus 12
 # sunset -      #dbd0b!7
 # red forest -  #eeb1a!d
 
-# foreground      = #afffa3
+foreground      = #ddc3ff
 # foreground_bold = #afffa3
 # cursor          = #afffa3
 #background      = rgba(56, 60, 74, 0.999)
