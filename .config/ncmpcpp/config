@@ -527,3 +527,25 @@ mpd_music_dir = /mnt/SDXC/Media/Music
 #
 #active_window_border = red
 #
+# brennovich's config slightly modified
+
+# progressbar_look = "━━╸"
+progressbar_look = "─╼ "
+user_interface = "classic"
+
+song_list_format = "$5%a$9 | $1$9%t$1$9  $R$1$9%l$1$9"
+# song_columns_list_format = "(25)[blue]{a} (40)[blue]{t|f} (6f)[white]{l}"
+# song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[]{a} (20)[]{} (50)[white]{t|f}
+playlist_display_mode = "columns" (classic/columns)
+browser_display_mode = "classic" (classic/columns)
+search_engine_display_mode = "columns" (classic/columns)
+incremental_seeking = "yes"
+header_visibility = "no"
+titles_visibility = "no"
+enable_window_title = "no"
+statusbar_visibility = "yes"
+song_status_format = "$0%a $5// $0%t {$5// $0%b}"
+discard_colors_if_item_is_selected = "yes"
+
+execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"

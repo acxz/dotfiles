@@ -7,7 +7,7 @@
 
 OPTIONS="lock\nsuspend\nlogout\nreboot\npoweroff"
 
-LAUNCHER="rofi -lines 5 -location 1 -xoffset 7 -yoffset 40 -width 10 -dmenu -i -p power:"
+LAUNCHER="rofi -lines 5 -location 1 -xoffset 50 -yoffset 100 -width 10 -dmenu -i -p power:"
 
 option=`echo -e $OPTIONS | $LAUNCHER`
 if [ ${#option} -gt 0 ]

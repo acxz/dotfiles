@@ -9,7 +9,7 @@ zstyle :compinstall filename '/home/apatel435/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines add by compinstall 
+# End of lines add by compinstall
 
 # Custom prompt TODO
 # export PS1="\[\033[0;34m\]\w \[\033[33m\]❯❯❱\\[\033[m\] "
@@ -62,8 +62,10 @@ function cdls() {
 export PATH=~/bin:$PATH
 
 ## Import colorscheme from wal
-source "$HOME/.cache/wal/colors.sh"
-(wal -r -t &)
+#source "$HOME/.cache/wal/colors.sh"
+#(wal -r -t &)
+# pywal
+(cat ~/.cache/wal/sequences &)
 
 # change some dircolors
 eval "$(dircolors ~/.dircolors)";

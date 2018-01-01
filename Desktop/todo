@@ -77,6 +77,10 @@ music
 dunst
 -battery (kinda really need 2 do this getting annoying)
 --give time warnings
+-mpd
+--maybe include cover art
+-screenshot
+-also other types of music as well
 
 login ??
 -use lock scren

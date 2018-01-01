@@ -144,7 +144,7 @@ index-sort = true
 
 label-mode-padding = 1
 label-mode-foreground = ${colors.foreground}
-;label-mode-background = ${colors.background-alt}
+label-mode-background = ${colors.background-alt}
 
 label-name = %name%
 
@@ -159,32 +159,32 @@ label-urgent = %{B#00f} %name% %{B-}
 
 
 ;label-focused = %name%
-;label-focused-background = ${colors.background-alt}
-;label-focused-underline = ${colors.primary}
-;label-focused-overline = ${colors.primary}
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-overline = ${colors.primary}
 label-focused-padding = 1
 ;
 ;label-occupied= %name%
-;label-occupied-background = ${colors.background-alt}
-;label-occupied-underline = ${colors.secondary}
-;label-occupied-overline = ${colors.secondary}
+label-occupied-background = ${colors.background-alt}
+label-occupied-underline = ${colors.secondary}
+label-occupied-overline = ${colors.secondary}
 label-occupied-padding = 1
 ;
 ;label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 ;
-;label-visible = %name%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-;label-visible-underline = ${self.label-focused-underline}
-;label-visible-overline = ${self.label-focused-overline}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-overline = ${self.label-focused-overline}
 label-visible-padding = ${self.label-focused-padding}
 ;
 ;label-empty = %name%
-;label-empty-foreground = #66
+label-empty-foreground = #66
 label-empty-background = ${self.label-focused-background}
-;label-empty-underline = ${self.label-occupied-underline}
-;label-empty-overline = ${self.label-occupied-overline}
+label-empty-underline = ${self.label-occupied-underline}
+label-empty-overline = ${self.label-occupied-overline}
 label-empty-padding = ${self.label-focused-padding}
 
 [module/i3]
@@ -203,7 +203,7 @@ label-mode-background = ${colors.primary}
 label-blank = " "
 
 label-focused = %name%
-;label-focused-background = ${colors.background-alt}
+#label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-overline = ${colors.primary}
 label-focused-padding = ${module/bspwm.label-focused-padding}
@@ -225,8 +225,8 @@ label-visible-padding = ${self.label-focused-padding}
 type = internal/mpd
 
 format-online = <icon-prev> <toggle> <icon-next> <icon-repeat> <icon-random> <icon-stop>
-format-online-underline = ${colors.secondary}
-format-online-overline = ${colors.secondary}
+format-online-underline = ${colors.red}
+format-online-overline = ${colors.red}
 format-online-padding = 1
 
 icon-prev = prv
@@ -244,11 +244,11 @@ toggle-off-foreground = ${colors.secondary}
 [module/mpdinfo]
 type = internal/mpd
 
-label-song = "%title% by %artist%"
+label-song = "%artist% // %title%"
 
 format-online = <label-song>
-format-online-underline = ${colors.primary}
-format-online-overline = ${colors.primary}
+format-online-underline = ${colors.magenta}
+format-online-overline = ${colors.magenta}
 format-online-padding = 1
 
 label-song-maxlen = 90
@@ -447,8 +447,6 @@ click-middle = ~/.config/rofi/power.sh &
 
 click-right = rofi window -show window -lines 5 -location 1 -xoffset 7  -yoffset 40 -width 30 &
 
-//Dangerous
-
 [module/wintext]
 type = custom/text
 
@@ -465,6 +463,27 @@ click-middle = i3-msg fullscreen toggle
 
 click-right = i3-msg floating toggle
 
+[module/win-apps]
+type = custom/menu
+
+format-underline = ${colors.primary}
+format-overline = ${colors.primary}
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+label-open = cst
+label-close = x
+label-separator = "|"
+
+expand-right = true
+
+menu-0-0 = c
+menu-0-0-exec = i3-msg kill
+menu-0-1 = fs
+menu-0-1-exec = i3-msg fullscreen toggle
+menu-0-2 = ft
+menu-0-2-exec = i3-msg floating toggle
+
 [module/menu-apps]
 type = custom/menu
 
@@ -480,9 +499,9 @@ label-separator = " "
 expand-right = true
 
 menu-0-0 = app
-menu-0-0-exec = rofi run -show run -lines 10 -location 1 -xoffset 7  -yoffset 40 -width 15 &
+menu-0-0-exec = rofi run -show run -lines 10 -location 1 -xoffset 50  -yoffset 100 -width 15 &
 menu-0-1 = tab
-menu-0-1-exec = rofi window -show window -lines 5 -location 1 -xoffset 7  -yoffset 40 -width 30 &
+menu-0-1-exec = rofi window -show window -lines 5 -location 1 -xoffset 50  -yoffset 100 -width 30 &
 menu-0-2 = pwr
 menu-0-2-exec = ~/.config/rofi/power.sh &
 

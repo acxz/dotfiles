@@ -36,7 +36,7 @@
 ! ----------------
 rofi.width: 20
 rofi.padding: 10
-rofi.bw: 3
+rofi.bw: 5
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.color-enabled: true

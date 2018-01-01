@@ -26,5 +26,5 @@ bspc config presel_border_color  "#BDB410"
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
 
-feh --bg-scale /home/apatel435/Pictures/red_forest.jpg
+# feh --bg-scale /home/apatel435/Pictures/red_forest.jpg
 /home/apatel435/.config/polybar/launch.sh

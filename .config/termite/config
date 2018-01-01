@@ -12,7 +12,7 @@ allow_bold = false
 # sunset -      #dbd0b!7
 # red forest -  #eeb1a!d
 
-foreground      = #ddc3ff
+foreground      = #afffa3
 # foreground_bold = #afffa3
 # cursor          = #afffa3
 #background      = rgba(56, 60, 74, 0.999)

@@ -1,4 +1,4 @@
-@import url('file:///home/apatel435/.cache/wal/firefox.css');
+@import url('file:///home/apatel435/.cache/wal/colors.css');
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /* GENERAL */
 /** DESCRIPTION : set the main font and others details **/
@@ -20,27 +20,29 @@
 
 /* WINDOW */
 /** DESCRIPTION : change the position of main window in normal/maximized/fullscreen mode **/
-/*        #main-window:not([chromehidden*="toolbar"])[sizemode="normal"] {
+        /*#main-window:not([chromehidden*="toolbar"])[sizemode="normal"] {
             margin-top: -6px !important;
             margin-right: -2px !important;
             margin-bottom: -1px !important;
             margin-left: -1px !important;
             z-index: 99999 !important;
         }
+
+
         #main-window:not([chromehidden*="toolbar"])[sizemode="maximized"] {
             margin-top: -5px !important;
             margin-right: -1px !important;
             margin-bottom: -1px !important;
             margin-left: -1px !important;
         }
+
         #main-window:not([chromehidden*="toolbar"])[sizemode="fullscreen"] {
-            margin-right: -1px !important;
-            margin-left: -1px !important;
+            margin-right: 0px !important;
+            margin-left: 0px !important;
         }
         #PopupAutoCompleteRichResult .autocomplete-richlistbox {
             margin-left: -25px !important;
-        }
-*/
+        }*/
 
 /* TABS */
 /** DESCRIPTION : change the appearance of the tabs and others elements **/
@@ -53,8 +55,8 @@
         }
         .tabbrowser-tabs:not([drag=detach]) > .tabbrowser-tab:not([pinned])[fadein] {
             /*** TABS WIDTH (PINNED AND UNPINNED) ***/
-            /*min-width: 10px !important;
-            max-width: 260px !important;*/
+            min-width: 10px !important;
+            max-width: 260px !important;
         }
         #TabsToolbar .tabbrowser-tabs .tab-content {
             /*** THE TABS ***/

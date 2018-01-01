@@ -69,6 +69,8 @@ set $cyan       #1fad83
 set_from_resource   $primary    i3wm.color6
 set_from_resource   $secondary  i3wm.color1
 set_from_resource   $warning    i3wm.color7
+set_from_resource   $bg         i3wm.color0
+
 # set $primary    #1fad83
 # set $secondary  #7054d4
 # set $warning    #d73737
@@ -79,11 +81,17 @@ client.focused_inactive $secondary  $secondary  $secondary  $secondary
 client.unfocused        $secondary  $secondary  $secondary  $secondary
 client.urgent           $warning    $warning    $warning    $warning
 
+# Dunst
+# exec_always --no-startup-id dunst -lfr $primary -nfr $primary -cfr $primary -lb $bg -nb $bg -cb $bg -lf $warning -bf $warning -cf $warning -nf $warning &
+exec_always --no-startup-id ~/bin/walset
+
 # Open empty container
 bindsym $mod+o open
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+backslash exec --no-startup-id termite -r fl_term
+for_window [window_role=fl_term] floating enable
 
 # start firefox
 bindsym $mod+Shift+f exec firefox
@@ -177,7 +185,7 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize " {
+mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -200,7 +208,7 @@ mode "resize " {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize "
+bindsym $mod+r mode "resize"
 
 # Change gaps on the fly
 set $mode_gaps Gaps: (o) outer, (i) inner
