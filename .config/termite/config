@@ -1,6 +1,7 @@
 [options]
 # font = xos4 Terminus 12
-font = Fira Mono 12
+# font = Fira Mono 12
+font = Hermit 12
 
 allow_bold = false
 
@@ -16,7 +17,7 @@ foreground      = #afffa3
 # foreground_bold = #afffa3
 # cursor          = #afffa3
 #background      = rgba(56, 60, 74, 0.999)
-background = rgba(30, 40, 50, 1)
+background = rgba(30, 40, 50, 0.7)
 
 # black
 color0  = #20201d
