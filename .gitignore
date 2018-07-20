@@ -85,13 +85,6 @@
 /.config/termite/*
 !/.config/termite/config
 #
-# vis
-!/.config/vis
-/.config/vis/*
-!/.config/vis/config
-!/.config/vis/colors
-/.config/vis/colors/*
-!/.config/vis/colors/nightsky
 
 # Dircolors
 !.dircolors
@@ -107,14 +100,11 @@
 /.mozilla/*
 !/.mozilla/firefox
 /.mozilla/firefox/*
-!/.mozilla/firefox/ekep42w0.default
-/.mozilla/firefox/ekep42w0.default/*
-!/.mozilla/firefox/ekep42w0.default/chrome
-/.mozilla/firefox/ekep42w0.default/chrome/*
-!/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css
-
-# Vimperator
-!.vimperatorrc
+!/.mozilla/firefox/0vcmkyb0.default
+/.mozilla/firefox/0vcmkyb0.default/*
+!/.mozilla/firefox/0vcmkyb0.default/chrome
+/.mozilla/firefox/0vcmkyb0.default/chrome/*
+!/.mozilla/firefox/0vcmkyb0.default/chrome/userChrome.css
 
 # Vim related files
 !.vimrc
