@@ -34,13 +34,14 @@
 ! ----------------
 ! Rofi Color Theme
 ! ----------------
-rofi.width: 20
-rofi.padding: 10
-rofi.bw: 5
+rofi.font: Hermit 8
+rofi.width: 30
+rofi.padding: 5
+rofi.bw: 3
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.color-enabled: true
-rofi.color-window: argb:FF1E2832, argb:FF1fad83, argb:FF1E2832
+rofi.color-window: argb:FF1E2832, argb:FF60ac39, argb:FF1E2832
 rofi.color-normal: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1fad83
 rofi.color-active: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1fad83
 rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, argb:FF1fad83
@@ -48,5 +49,5 @@ rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, a
 ! --------------
 ! Resolution and DPI
 ! ------------------
-Xft.dpi: 144
-rofi.dpi: 144
+Xft.dpi: 96
+rofi.dpi: 96

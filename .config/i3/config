@@ -18,7 +18,8 @@ set $mod Mod1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:xos4 Terminus 12
-font pango:Fira Mono 12
+#font pango:Fira Mono 12
+font pango:hermit 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -31,12 +32,13 @@ font pango:Fira Mono 12
 floating_modifier $mod
 
 # Wifi
-exec sudo netctl start wlp2s0-GTother
-exec sudo netctl start wlp8s0-GTother
-exec sudo netctl start wlp59s0-GTother
+# exec sudo netctl start wlp2s0-GTother
+# exec sudo netctl start wlp8s0-GTother
+# exec sudo netctl start wlp59s0-GTother
 
 # Wallpaper
 # exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/sun_night_star.jpg
+exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/night_sky.jpg
 
 # Compton
 # With conf file
@@ -51,10 +53,15 @@ for_window [class="^.*"] border pixel 3
 bindsym --release button2 kill
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# i3bar
+bar {
+    status_command i3status
+}
 
 # Gaps
-gaps inner 40 #10
+# gaps inner 40 #10
 #gaps outer 40
 
 # Colors
@@ -75,23 +82,29 @@ set_from_resource   $bg         i3wm.color0
 # set $secondary  #7054d4
 # set $warning    #d73737
 
-# colors                BORDER      BACKGROUND  TEXT        INDICATOR
-client.focused          $primary    $primary    $primary    $primary
-client.focused_inactive $secondary  $secondary  $secondary  $secondary
-client.unfocused        $secondary  $secondary  $secondary  $secondary
-client.urgent           $warning    $warning    $warning    $warning
+# colors                    BORDER      BACKGROUND  TEXT        INDICATOR
+client.focused              $cyan       $cyan       $cyan       $cyan
+client.focused_inactive     $magenta    $magenta    $magenta    $magenta
+client.unfocused            $magenta    $magenta    $magenta    $magenta
+client.urgent               $red        $red        $red        $red
+
+#client.focused          $primary    $primary    $primary    $primary
+#client.focused_inactive $secondary  $secondary  $secondary  $secondary
+#client.unfocused        $secondary  $secondary  $secondary  $secondary
+#client.urgent           $warning    $warning    $warning    $warning
 
 # Dunst
 # exec_always --no-startup-id dunst -lfr $primary -nfr $primary -cfr $primary -lb $bg -nb $bg -cb $bg -lf $warning -bf $warning -cf $warning -nf $warning &
-exec_always --no-startup-id ~/bin/walset
+# exec_always --no-startup-id ~/bin/walset
 
 # Open empty container
 bindsym $mod+o open
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+backslash exec --no-startup-id termite -r fl_term
-for_window [window_role=fl_term] floating enable
+# bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+backslash exec --no-startup-id termite -r fl_term
+# for_window [window_role=fl_term] floating enable
+bindsym $mod+Return exec termite
 
 # start firefox
 bindsym $mod+Shift+f exec firefox
@@ -112,16 +125,16 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left 50 px
-bindsym $mod+Shift+j move down 50 px
-bindsym $mod+Shift+k move up 50 px
-bindsym $mod+Shift+l move right 50 px
+bindsym $mod+Shift+h move left 20 px
+bindsym $mod+Shift+j move down 20 px
+bindsym $mod+Shift+k move up 20 px
+bindsym $mod+Shift+l move right 20 px
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left 50 px
-bindsym $mod+Shift+Down move down 50 px
-bindsym $mod+Shift+Up move up 50 px
-bindsym $mod+Shift+Right move right 50 px
+bindsym $mod+Shift+Left move left 20 px
+bindsym $mod+Shift+Down move down 20 px
+bindsym $mod+Shift+Up move up 20 px
+bindsym $mod+Shift+Right move right 20 px
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -182,7 +195,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -211,42 +224,42 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Change gaps on the fly
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+# set $mode_gaps Gaps: (o) outer, (i) inner
+# set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# bindsym $mod+Shift+g mode "$mode_gaps"
+#
+# mode "$mode_gaps" {
+#         bindsym o      mode "$mode_gaps_outer"
+#         bindsym i      mode "$mode_gaps_inner"
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+#
+# mode "$mode_gaps_inner" {
+#         bindsym plus  gaps inner current plus 5
+#         bindsym minus gaps inner current minus 5
+#         bindsym 0     gaps inner current set 0
+#
+#         bindsym Shift+plus  gaps inner all plus 5
+#         bindsym Shift+minus gaps inner all minus 5
+#         bindsym Shift+0     gaps inner all set 0
+#
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_outer" {
+#         bindsym plus  gaps outer current plus 5
+#         bindsym minus gaps outer current minus 5
+#         bindsym 0     gaps outer current set 0
+#
+#         bindsym Shift+plus  gaps outer all plus 5
+#         bindsym Shift+minus gaps outer all minus 5
+#         bindsym Shift+0     gaps outer all set 0
+#
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -261,29 +274,29 @@ mode "$mode_gaps_outer" {
 # Binding for rofi
 bindsym $mod+d exec rofi -show run -lines 10
 bindsym $mod+Tab exec rofi -show window
-bindsym $mod+Shift+e exec ~/.config/rofi/power
+# bindsym $mod+Shift+e exec ~/.config/rofi/power
 
 # Binding for brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2
-bindsym F11 exec xbacklight -set 1
-bindsym F12 exec xbacklight -set 100
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 2
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+# bindsym F11 exec xbacklight -set 1
+# bindsym F12 exec xbacklight -set 100
 
 # Binding for volume
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
-bindsym XF86AudioMute exec pulseaudio-ctl mute #F5
+# bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
+# bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
+# bindsym XF86AudioMute exec pulseaudio-ctl mute #F5
 
 # Binding for next,prev,play/pause
-bindsym XF86AudioNext exec mpc next #F8
-bindsym XF86AudioPrev exec mpc prev #F6
-bindsym XF86AudioPlay exec mpc toggle #F7
+# bindsym XF86AudioNext exec mpc next #F8
+# bindsym XF86AudioPrev exec mpc prev #F6
+# bindsym XF86AudioPlay exec mpc toggle #F7
 
 # Binding for screenshot
 bindsym Print exec scrot -q 100 -e 'mv $f ~/Pictures/shots/'
 
 # Binding for lock
-bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
+# bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_sky_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
 
 # Binding for redshift
 # bindsym Shift+XF86MonBrightnessDown exec redshift -O 1500
@@ -292,17 +305,17 @@ bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_
 bindsym Control+Next exec redshift -O 1500
 bindsym Control+Prior exec redshift -x
 
-# BInding for mzc
-bindsym Control+$mod+0 exec ~/.config/i3/layout_mzc.sh
+# Binding for mzc
+# bindsym Control+$mod+0 exec ~/.config/i3/layout_mzc.sh
 
 # Binding for floating windows snapping
-bindsym Control+$mod+1 floating enable, exec divvy.sh quarter-top-left
-bindsym Control+$mod+2 floating enable, exec divvy.sh half-top
-bindsym Control+$mod+3 floating enable, exec divvy.sh quarter-top-right
-bindsym Control+$mod+4 floating enable, exec divvy.sh half-left
-bindsym Control+$mod+5 floating enable, exec divvy.sh middle-full
-bindsym Control+$mod+6 floating enable, exec divvy.sh half-right
-bindsym Control+$mod+7 floating enable, exec divvy.sh quarter-bottom-left
-bindsym Control+$mod+8 floating enable, exec divvy.sh half-bottom
-bindsym Control+$mod+9 floating enable, exec divvy.sh quarter-bottom-right
+# bindsym Control+$mod+1 floating enable, exec divvy.sh quarter-top-left
+# bindsym Control+$mod+2 floating enable, exec divvy.sh half-top
+# bindsym Control+$mod+3 floating enable, exec divvy.sh quarter-top-right
+# bindsym Control+$mod+4 floating enable, exec divvy.sh half-left
+# bindsym Control+$mod+5 floating enable, exec divvy.sh middle-full
+# bindsym Control+$mod+6 floating enable, exec divvy.sh half-right
+# bindsym Control+$mod+7 floating enable, exec divvy.sh quarter-bottom-left
+# bindsym Control+$mod+8 floating enable, exec divvy.sh half-bottom
+# bindsym Control+$mod+9 floating enable, exec divvy.sh quarter-bottom-right
 # bindsym Control+$mod+0 floating enable, exec divvy.sh middle-small

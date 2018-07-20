@@ -172,11 +172,20 @@ hi Folded ctermbg=none
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+" Autoload plug.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+" Reload .vimrc and use ':PlugInstall to install plugins'
+
+call plug#begin('~/.vim/plugged')
+"
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-
+"
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
