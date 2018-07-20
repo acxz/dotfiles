@@ -1,7 +1,7 @@
 [options]
 # font = xos4 Terminus 12
 # font = Fira Mono 12
-font = Hermit 10
+font = Hermit 8
 
 allow_bold = false
 
