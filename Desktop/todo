@@ -1,3 +1,20 @@
+zathura
+-colors
+
+walset
+-add a rofi way of changing themes
+
+resolution settings
+-make a script to change resolution for different systems
+--firefox
+--GDK GTK
+--dpi xresources
+--i3gaps
+--polybar
+
+webhub
+-add canvas
+
 vcs
 -servers
 --users
@@ -5,26 +22,30 @@ vcs
 
 sysinfo
 -make own sysinfo like neofetch
+--pretty much just parsing relevant files and printing to terminal
 
 mouse pad settings
+-hmmm? more specific
 
 gtk
 -change colors on the fly
--maybe use wpgtk for this?
 
 polybar
--borders
--gaps b/t wrkspc
--c|fs|ft
+-borders or mabye should i just make it into one bar
+--just try more stuff/config/designs
+-gaps b/t wrkspc (nah its okay p much decided defeat)
+-c|fs|ft (make individual buttons)
 
 redshift
 -change value dynamically
+-can do it via a script
 
 -termite
 -vte
 -bold / intensity (what is bold even)
 
 vim
+-separators
 -lightline
 --colors
 -syntastic
@@ -34,7 +55,7 @@ vim
 graphics
 -get nvidia to work?
 
-xrandr -o switcher script
+xrandr -o switcher script (p sure one is floating around on archlinux forums)
 
 neofetch
 -dsk - eh
@@ -71,16 +92,13 @@ windowchef
 -workspaces
 
 music
--ncmpcpp config
 -fix library
 
 dunst
--battery (kinda really need 2 do this getting annoying)
---give time warnings
 -mpd
 --maybe include cover art
 -screenshot
--also other types of music as well
+-also other types of music as well e.g. youtube spotify
 
 login ??
 -use lock scren
@@ -99,4 +117,5 @@ weechat
 
 mutt
 
-I kinda want to make a radar app for linux
+I kinda want to make a radar app for linux like a cli one
+-where do i pull data from tho?

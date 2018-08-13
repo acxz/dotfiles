@@ -14,6 +14,7 @@
 
     #content browser {
         margin-right: -14px !important;
+        margin-bottom: -14px !important;
         overflow-y: scroll;
         overflow-x: hidden;
     }

@@ -43,8 +43,12 @@ alias -r ll="ls -la"
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
-export gatech=/mnt/SDXC/School/Georgia\ Tech/Gatech/3\ Junior\ 1st\ Sem
+export gatech=/mnt/SDXC/School/Georgia\ Tech/Gatech/3\ Junior\ 2nd\ Sem
 #alias -r gatech="cd $gatech"
+#
+
+#cs36=~/Desktop/cs3600
+#~cs36
 
 # CS 1332
 export CLASSPATH=".:/home/apatel435/Desktop/cs1332/junit/junit-4.12.jar:/home/apatel435/Desktop/cs1332/junit/hamcrest-core-1.3.jar"

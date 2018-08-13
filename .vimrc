@@ -130,6 +130,9 @@ endfun
 autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.py :call <SID>StripTrailingWhitespaces()
 
+"LaTeX indenting"
+let g:tex_flavor='latex'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Moving around, tabs, and windows, and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -185,7 +188,7 @@ call plug#end()
 set noshowmode
 set noruler
 set noshowcmd
-set laststatus=2
+set laststatus=1
 
 let g:lightline = {
     \ 'colorscheme': 'wombat',

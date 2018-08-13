@@ -289,7 +289,7 @@ bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_
 # bindsym Shift+XF86MonBrightnessDown exec redshift -O 1500
 # bindsym Shift+XF86MonBrightnessUp exec redshift -x
 
-bindsym Control+Next exec redshift -O 1500
+bindsym Control+Next exec redshift -O 3000
 bindsym Control+Prior exec redshift -x
 
 # BInding for mzc
