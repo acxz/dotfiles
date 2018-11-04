@@ -63,6 +63,11 @@
 /.config/neofetch/*
 !/.config/neofetch/config.conf
 #
+# nvim
+!/.config/nvim
+/.config/nvim/*
+!/.config/nvim/init.vim
+#
 # polybar
 !/.config/polybar
 /.config/polybar/*
