@@ -11,7 +11,7 @@ xrdb -merge ~/.Xresources
 wal -R
 
 # Here i3 is kept as default
-session=${1:-bspwm}
+session=${1:-i3}
 
 case $session in
     i3      ) exec i3;;
