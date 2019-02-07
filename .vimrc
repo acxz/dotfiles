@@ -145,7 +145,9 @@ nnoremap k gk
 
 " Mouse resize
 set mouse=n
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
