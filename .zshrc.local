@@ -45,7 +45,7 @@ alias -r ll="ls -la"
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
-export gatech="/media/SDXC/School/Georgia\ Tech/Gatech/Summer\ 18"
+export gatech="/media/apatel435/SDXC/School/Georgia_Tech/Gatech/4_Senior_2nd_Sem"
 #alias -r gatech="cd $gatech"
 
 # CS 1332
@@ -67,10 +67,10 @@ export PATH=~/bin:$PATH
 #source "$HOME/.cache/wal/colors.sh"
 #(wal -r -t &)
 # pywal
-# (cat ~/.cache/wal/sequences &)
+(cat ~/.cache/wal/sequences &)
 
 # change some dircolors
-# eval "$(dircolors ~/.dircolors)";
+eval "$(dircolors ~/.dircolors)";
 
 # Fish-like syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -78,4 +78,3 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
 ZSH_HIGHLIGHT_STYLES[path]='none'
 # Removes underline in sudo
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
-

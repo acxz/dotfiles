@@ -1,7 +1,7 @@
 "Mostly from Amir Salihefendic
 "And xero
 "Some from Arch Linux Wiki
-"Author of file: AkashPatel435
+"Author of file: apatel435
 
 " Tip: Leader is '\'
 "
@@ -107,8 +107,10 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+"set shiftwidth=4
+"set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Highlight trailing spaces
 :hi ExtraWhitespace ctermbg=cyan
@@ -188,6 +190,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'rhysd/vim-clang-format'
+Plug 'nvie/vim-flake8'
 "
 call plug#end()
 
