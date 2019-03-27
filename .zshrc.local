@@ -63,10 +63,7 @@ function cdls() {
 # Personal bin
 export PATH=~/bin:$PATH
 
-## Import colorscheme from wal
-#source "$HOME/.cache/wal/colors.sh"
-#(wal -r -t &)
-# pywal
+# Import colorscheme from wal
 (cat ~/.cache/wal/sequences &)
 
 # change some dircolors

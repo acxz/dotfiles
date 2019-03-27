@@ -5,9 +5,6 @@
 !/bin
 /bin/*
 
-# wal
-!/bin/wal
-
 ### Config file directory
 !/.config
 /.config/*
