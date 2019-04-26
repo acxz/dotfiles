@@ -12,29 +12,22 @@ resolution settings
 --i3gaps
 --polybar
 
-webhub
--add canvas
-
 vcs
 -servers
 --users
 ---repo
 
-sysinfo
--make own sysinfo like neofetch
---pretty much just parsing relevant files and printing to terminal
-
-mouse pad settings
--hmmm? more specific
-
 gtk
 -change colors on the fly
+-i think oomox now supports arc theme
+-and wal has oomox support
 
 polybar
 -borders or mabye should i just make it into one bar
 --just try more stuff/config/designs
 -gaps b/t wrkspc (nah its okay p much decided defeat)
 -c|fs|ft (make individual buttons)
+-fix volume module
 
 redshift
 -change value dynamically
@@ -52,9 +45,6 @@ vim
 -ctrlp
 -multiple cursors
 
-graphics
--get nvidia to work?
-
 xrandr -o switcher script (p sure one is floating around on archlinux forums)
 
 neofetch
@@ -63,7 +53,7 @@ neofetch
 -colors go under everything
 
 zsh
--prompt
+-prompt want some cool arrows or something
 -cd allusers colors
 
 tty
@@ -119,3 +109,9 @@ mutt
 
 I kinda want to make a radar app for linux like a cli one
 -where do i pull data from tho?
+
+----- Software interested in -------
+dartsim (libdart)
+xfoil
+avl
+openvsp
