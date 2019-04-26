@@ -72,6 +72,7 @@
 # rofi
 !/.config/rofi
 /.config/rofi/*
+!/.config/rofi/config
 !/.config/rofi/power
 !/.config/rofi/power.sh
 #
