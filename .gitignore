@@ -112,7 +112,8 @@
 /.mozilla/firefox/ekep42w0.default/*
 !/.mozilla/firefox/ekep42w0.default/chrome
 /.mozilla/firefox/ekep42w0.default/chrome/*
-!/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css
+#!/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css
+!/.mozilla/firefox/ekep42w0.default/chrome/userChrome.css.old
 
 # Vimperator
 !.vimperatorrc

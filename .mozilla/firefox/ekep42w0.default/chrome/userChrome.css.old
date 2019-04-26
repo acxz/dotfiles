@@ -204,7 +204,7 @@
         #PanelUI-button {
             /*** HAMBURGER ICON ***/
             width: 5px !important;
-            margin-left: -30px !important;
+            margin-left: 0px !important;
             /*pointer-events: none !important;*/
         }
         #PanelUI-button .button-icon,
