@@ -58,11 +58,13 @@ function cdls() {
 # Personal bin
 export PATH=~/bin:$PATH
 
-## Import colorscheme from wal
-#source "$HOME/.cache/wal/colors.sh"
-#(wal -r -t &)
-# pywal
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
+# To add support for TTYs this line can be optionally added.
+#source ~/.cache/wal/colors-tty.sh
 
 # change some dircolors
 eval "$(dircolors ~/.dircolors)";
