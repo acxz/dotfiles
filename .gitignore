@@ -61,7 +61,7 @@
 # neofetch
 !/.config/neofetch
 /.config/neofetch/*
-!/.config/neofetch/config
+!/.config/neofetch/config.conf
 #
 # polybar
 !/.config/polybar
