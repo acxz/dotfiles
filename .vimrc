@@ -109,6 +109,9 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+" 1 tab == 2 spaces
+"set shiftwidth=2
+"set tabstop=2
 
 " Highlight trailing spaces
 :hi ExtraWhitespace ctermbg=cyan
@@ -128,7 +131,6 @@ endfun
 
 "Delete trailing spaces after save and return position
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.py :call <SID>StripTrailingWhitespaces()
 
 "LaTeX indenting"
 let g:tex_flavor='latex'
@@ -149,6 +151,12 @@ nnoremap k gk
 " Mouse resize
 set mouse=n
 set ttymouse=xterm2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"===> Clipboard
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set clipboard=unnamedplus
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,6 +187,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
