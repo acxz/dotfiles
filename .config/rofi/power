@@ -8,11 +8,11 @@
 OPTIONS="lock\nsuspend\nlogout\nreboot\npoweroff"
 
 # source configuration or use default values
-if [ -f $HOME/.config/rofi/power-config ] 
+if [ -f $HOME/.config/rofi/power-config ]
 then
   source $HOME/.config/rofi/power-config
 else
-  LAUNCHER="rofi -width 10 -lines 5 -dmenu -i -p power:"
+  LAUNCHER="rofi -width 10 -lines 5 -dmenu -i -p power"
 fi
 
 # Show exit wm option if exit command is provided as an argument
@@ -34,13 +34,13 @@ then
         systemctl poweroff
         ;;
       lock)
-        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/sun_night_star_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
+        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/sun_night_star_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff
         ;;
       logout)
         i3-msg exit
         ;;
       suspend)
-        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/sun_night_star_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --textcolor=afffa3ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff;
+        i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/sun_night_star_blur.png --insidevercolor=1e2832ff --insidewrongcolor=d73737ff --insidecolor=1e2832ff --ringvercolor=1e2832ff --ringwrongcolor=1e2832ff --ringcolor=1e2832ff --linecolor=1e2832ff --separatorcolor=1e2832ff --keyhlcolor=60ac39ff --bshlcolor=d73737ff;
         systemctl suspend
         ;;
       *)
