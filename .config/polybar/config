@@ -84,8 +84,7 @@ font-3 = IPAGothic:pixelsize=16;2
 
 modules-left = menu-apps wintext mpdcontrols mpdinfo
 modules-center = i3
-;modules-right = pulseaudio xbacklight battery date
-modules-right = xbacklight battery date
+modules-right = pulseaudio xbacklight battery date
 
 ;tray-position = middle
 ;tray-padding = 5
