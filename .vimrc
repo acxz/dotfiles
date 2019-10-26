@@ -129,6 +129,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 "Delete trailing spaces after save and return position
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.py :call <SID>StripTrailingWhitespaces()
 
