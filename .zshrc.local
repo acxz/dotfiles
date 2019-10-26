@@ -45,7 +45,7 @@ alias -r ll="ls -la"
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
-export gatech="/media/apatel435/SDXC/School/Georgia_Tech/Gatech/5_Masters_1st_sem"
+export gatech="/media/apatel435/SDXC/School/Georgia_Tech/Gatech/5_Masters_1st_Sem"
 
 # ls after cd
 function cdls() {
@@ -71,8 +71,14 @@ ZSH_HIGHLIGHT_STYLES[path]='none'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 
 # ROS stuff
-source /opt/ros/kinetic/setup.zsh
+stat /opt/ros/kinetic/setup.zsh &> /dev/null
+if [ $? -eq 0 ]; then
+    source /opt/ros/kinetic/setup.zsh
+    source ~/Desktop/ece7785/labs/lab4/lab4_ws/devel/setup.zsh
 
-# turtlebot3 stuff
-export ROS_MASTER_URI=http://192.168.0.100:11311
-export ROS_HOSTNAME=192.168.0.100
+    export ROS_MASTER_URI=http://143.215.52.141:11311
+    export ROS_HOSTNAME=143.215.52.141
+
+    # turtlebot3 stuff
+    export TURTLEBOT3_MODEL=burger
+fi
