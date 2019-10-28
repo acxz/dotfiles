@@ -43,8 +43,7 @@ alias -r ll="ls -la"
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
-export gatech=/mnt/SDXC/School/Georgia_Tech/Gatech/4_Senior_2nd_Sem
-
+export gatech=/mnt/SDXC/School/Georgia_Tech/Gatech/5_Masters_1st_Sem
 # CS 1332
 export CLASSPATH=".:/home/apatel435/Desktop/cs1332/junit/junit-4.12.jar:/home/apatel435/Desktop/cs1332/junit/hamcrest-core-1.3.jar"
 
@@ -75,3 +74,15 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
 ZSH_HIGHLIGHT_STYLES[path]='none'
 # Removes underline in sudo
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
+
+# ROS stuff
+stat /opt/ros/melodic/setup.zsh &> /dev/null
+if [ $? -eq 0 ]; then
+    source /opt/ros/melodic/setup.zsh
+
+    export ROS_MASTER_URI=http://143.215.58.20:11311
+    export ROS_HOSTNAME=143.215.58.20
+
+    # turtlebot3 stuff
+    export TURTLEBOT3_MODEL=burger
+fi
