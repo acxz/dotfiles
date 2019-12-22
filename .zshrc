@@ -63,7 +63,7 @@ export PATH=~/bin:$PATH
 (cat ~/.cache/wal/sequences &)
 
 # To add support for TTYs this line can be optionally added.
-#source ~/.cache/wal/colors-tty.sh
+source ~/.cache/wal/colors-tty.sh
 
 # change some dircolors
 eval "$(dircolors ~/.dircolors)";
@@ -80,8 +80,8 @@ stat /opt/ros/melodic/setup.zsh &> /dev/null
 if [ $? -eq 0 ]; then
     source /opt/ros/melodic/setup.zsh
 
-    export ROS_MASTER_URI=http://143.215.58.20:11311
-    export ROS_HOSTNAME=143.215.58.20
+    export ROS_MASTER_URI=http://143.215.48.230:11311
+    export ROS_HOSTNAME=143.215.48.230
 
     # turtlebot3 stuff
     export TURTLEBOT3_MODEL=burger

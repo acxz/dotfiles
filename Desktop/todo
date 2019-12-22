@@ -1,6 +1,9 @@
 zathura
 -colors
 
+picom
+-config file
+
 walset
 -add a rofi way of changing themes
 

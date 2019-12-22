@@ -36,18 +36,18 @@ exec sudo netctl start wlp8s0-GTother
 exec sudo netctl start wlp59s0-eduroam
 
 # Wallpaper
-# exec --no-startup-id feh --bg-scale /home/apatel435/Pictures/sun_night_star.jpg
+# exec --no-startup-id feh --bg-scale ~/Pictures/sun_night_star.jpg
 
-# Compton
+# Picom
 # With conf file
-exec --no-startup-id compton --config /home/apatel435/.config/compton.conf -b
+exec --no-startup-id picom --config ~/.config/picom.conf -b
 
 # Eliminate window titlebars
 for_window [class="^.*"] border pixel 3
 # for_window [class="^.*"] floating enable
 
 # Floating titlebars
-# bindsym $mod+Shift+space exec --no-startup-id /home/apatel435/.config/i3/i3ipc_hideshow_border floating toggle
+# bindsym $mod+Shift+space exec --no-startup-id ~/.config/i3/i3ipc_hideshow_border floating toggle
 bindsym --release button2 kill
 
 # Polybar
@@ -82,7 +82,7 @@ client.unfocused        $secondary  $secondary  $secondary  $secondary
 client.urgent           $warning    $warning    $warning    $warning
 
 # Dunst
-# exec_always --no-startup-id dunst -lfr $primary -nfr $primary -cfr $primary -lb $bg -nb $bg -cb $bg -lf $warning -bf $warning -cf $warning -nf $warning &
+exec_always --no-startup-id dunst -lfr $primary -nfr $primary -cfr $primary -lb $bg -nb $bg -cb $bg -lf $warning -bf $warning -cf $warning -nf $warning &
 exec_always --no-startup-id ~/bin/walset
 
 # Open empty container
