@@ -1,7 +1,7 @@
 "Mostly from Amir Salihefendic
 "And xero
 "Some from Arch Linux Wiki
-"Author of file: AkashPatel435
+"Author of file: acxz
 
 " Tip: Leader is '\'
 "
@@ -121,7 +121,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-"Restore cursor position
+" Restore cursor position
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -129,10 +129,10 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-"Delete trailing spaces after save and return position
+" Delete trailing spaces after save and return position
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-"LaTeX indenting"
+" LaTeX indenting"
 let g:tex_flavor='latex'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,15 +147,6 @@ augroup END
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-
-" Mouse resize
-set mouse=n
-set ttymouse=xterm2
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"===> Clipboard
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Editing mappings
@@ -183,7 +174,7 @@ hi Folded ctermbg=none
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
