@@ -1,0 +1,64 @@
+See: https://man.cx/zathurarc(5)
+
+# display options
+set guioptions ""
+
+# clipboard
+set selection-clipboard "clipboard"
+set selection-notification "false"
+
+# title
+set window-title-basename "true"
+set window-title-page "true"
+set statusbar-basename "true"
+
+# font
+set font "monospace normal 9"
+
+# colors
+set completion-bg #232323
+set completion-fg #DDDDDD
+set completion-group-bg #000000
+set completion-group-fg #000000
+set completion-highlight-bg #9FBC00
+set completion-highlight-fg #232323
+
+set default-fg #DDDDDD
+set default-bg #000000
+
+set inputbar-bg #131313
+set inputbar-fg #9FBC00
+
+set notification-bg #FFFFFF
+set notification-fg #000000
+set notification-error-bg #FFFFFF
+set notification-error-fg #FF1212
+set notification-warning-bg #FFFFFF
+set notification-warning-fg #FFF712
+
+set tabbar-bg #000000
+set tabbar-fg #FFFFFF
+set tabbar-focus-bg #000000
+set tabbar-focus-fg #9FBC00
+
+set statusbar-bg #000000
+set statusbar-fg #FFFFFF
+
+set highlight-color #9FBC00
+set highlight-active-color #00BC00
+
+set index-bg #232323
+set index-fg #DDDDDD
+set index-active-bg #9FBC00
+set index-active-fg #232323
+
+set recolor "true"
+set recolor-keephue "true"
+set recolor-darkcolor #FFFFFF
+set recolor-lightcolor #000000
+set recolor-reverse-video "true"
+
+# render
+set render-loading "false"
+set render-loading-bg "FFFFFF"
+set render-loading-fg "000000"
