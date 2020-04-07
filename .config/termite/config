@@ -3,8 +3,6 @@
 # font = Fira Mono 12
 font = Hermit 12
 
-allow_bold = false
-
 [colors]
 
 # special
