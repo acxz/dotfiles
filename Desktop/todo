@@ -1,5 +1,9 @@
+volume
+ahhhh
+
 zathura
--colors
+-colors (learn templating with pywal)
+--contribute template back to pywal upstream
 
 picom
 -config file
@@ -15,29 +19,17 @@ resolution settings
 --i3gaps
 --polybar
 
-vcs
--servers
---users
----repo
-
 gtk
 -change colors on the fly
 -i think oomox now supports arc theme
 -and wal has oomox support
+- wpgtk
+
 polybar
 -borders or mabye should i just make it into one bar
 --just try more stuff/config/designs
 -gaps b/t wrkspc (nah its okay p much decided defeat)
 -c|fs|ft (make individual buttons)
--fix volume module
-
-redshift
--change value dynamically
--can do it via a script
-
--termite
--vte
--bold / intensity (what is bold even)
 
 vim
 -separators
@@ -48,21 +40,20 @@ vim
 -multiple cursors
 
 xrandr -o switcher script (p sure one is floating around on archlinux forums)
-
-neofetch
--dsk - eh
--ascii art format
--colors go under everything
+can i somehow access onboard imu?
 
 zsh
 -prompt want some cool arrows or something
--cd allusers colors
+--bubbles these days
+--virtualenv
 
 tty
 -blinking block cursor
 -dvtm
 --config
 --status bar
+-tmux
+--just better multiplexing than dvtm
 -pictures and movies (this is hard)
 --maybe get them to not be full screen
 
@@ -94,6 +85,7 @@ dunst
 
 login ??
 -use lock scren
+-or can be fancy and use lightdm or slimdm?
 
 lock screen
 -update with new screenshot
@@ -102,36 +94,17 @@ themes
 -pywal
 --gtk
 --vim lightline colors
---termite foreground bold
 --lock
 
 weechat
 
 mutt
 
+htop
+figure out how to customize the bars like noefetch bars just diff ascii block
+
 I kinda want to make a radar app for linux like a cli one
 -where do i pull data from tho?
 
------ Software interested in -------
-physics engines
-dartsim (libdart)
-update libdart package in archlinux
-libccd
-pagmo (archlinux & debian)
-
-benchmark em - simbenchmark repo
-simbody
-drake
-physX
-chrono
-
-packages
-xfoil - debian
-avl - debian
-openvsp
-
-numerical optimal control software - package them for linux arch & ubuntu
-create an awesome list on github for this
-- psopt
-- bocop
-- and others
+touchpad-settings
+/etc/X11/xorg.conf.d/70-synaptics.conf
