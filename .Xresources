@@ -48,5 +48,5 @@ rofi.color-urgent: argb:00000000, argb:FFafffa3, argb:00000000, argb:00000000, a
 ! --------------
 ! Resolution and DPI
 ! ------------------
-Xft.dpi: 144
-rofi.dpi: 144
+Xft.dpi: 72
+rofi.dpi: 72

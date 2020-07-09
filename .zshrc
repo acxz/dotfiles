@@ -1,11 +1,11 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by copinstall
-zstyle :compinstall filename '/home/apatel435/.zshrc'
+zstyle :compinstall filename '/home/acxz/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -39,13 +39,17 @@ fi
 
 # Aliases
 alias -r ll="ls -la"
+alias -r vim="nvim"
+alias -r vi="nvim"
 
 alias -r weather="curl wttr.in"
 alias -r moon="curl wttr.in/Moon"
 
+alias -r age="awk -F \"[[ ]\" 'NR==1 {print $2;}' /var/log/pacman.log"
+
 export gatech=/mnt/SDXC/School/Georgia_Tech/Gatech/5_Masters_2nd_Sem
 # CS 1332
-export CLASSPATH=".:/home/apatel435/Desktop/cs1332/junit/junit-4.12.jar:/home/apatel435/Desktop/cs1332/junit/hamcrest-core-1.3.jar"
+#export CLASSPATH=".:/home/apatel435/Desktop/cs1332/junit/junit-4.12.jar:/home/apatel435/Desktop/cs1332/junit/hamcrest-core-1.3.jar"
 
 # ls after cd
 function cdls() {
@@ -75,14 +79,46 @@ ZSH_HIGHLIGHT_STYLES[path]='none'
 # Removes underline in sudo
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 
+# Fish-like autosuggesstions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # ROS stuff
-stat /opt/ros/melodic/setup.zsh &> /dev/null
+stat /opt/ros/noetic/setup.zsh &> /dev/null
 if [ $? -eq 0 ]; then
-    source /opt/ros/melodic/setup.zsh
+    source /opt/ros/noetic/setup.zsh
 
-    export ROS_MASTER_URI=http://143.215.48.230:11311
-    export ROS_HOSTNAME=143.215.48.230
+    export ROS_MASTER_URI=http://localhost:11311
+    export ROS_HOSTNAME=localhost
 
-    # turtlebot3 stuff
-    export TURTLEBOT3_MODEL=burger
 fi
+
+# turtlebot3 stuff
+#export TURTLEBOT3_MODEL=burger
+
+# Gazebo stuff
+stat /usr/share/gazebo/setup.sh &> /dev/null
+if [ $? -eq 0 ]; then
+    source /usr/share/gazebo/setup.sh
+    alias killgazebo="killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient"
+fi
+
+# Multirotor stuff
+## Ardupilot
+export ACDS_ARDU_DIR="/home/acxz/vcs/git/github.gatech/ACDS/multirotor/ardupilot"
+alias waf="$ACDS_ARDU_DIR/modules/waf/waf-light"
+export PATH=$PATH:$ACDS_ARDU_DIR/Tools/autotest # maybe pr upstream on this?
+## ROS
+# for some reason need to use absolute path
+# Use full path instead of relative
+export MULTIROTOR_WS="/home/acxz/vcs/git/github.gatech/ACDS/multirotor/multirotor_ws"
+
+stat $MULTIROTOR_WS/devel/setup.zsh &> /dev/null
+if [ $? -eq 0 ]; then
+    source $MULTIROTOR_WS/devel/setup.zsh
+fi
+
+export IGN_IP=127.0.0.1 # wat is this used for?
+export GAZEBO_MODEL_PATH=$MULTIROTOR_WS/src/acds_multirotor/sitl/models:${GAZEBO_MODEL_PATH}
+
+# Crazyflie stuff
+#source ~/cf_ws/devel/setup.zsh

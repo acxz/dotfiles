@@ -53,21 +53,21 @@ bottom = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 3
+overline-size = 2
 overline-color = #f00
-underline-size = 3
+underline-size = 2
 underline-color = #00f
 
-;border-size = 3
+;border-size = 2
 ;border-color = #7054d4
 
-border-top-size = 40
+border-top-size = 20
 border-top-color = #00000000
 ;border-bottom = 10
 border-bottom-color = #00000000
-border-left-size = 40
+border-left-size = 20
 border-left-color = #00000000
-border-right-size  = 40
+border-right-size  = 20
 border-right-color = #00000000
 
 ;radius = 5
@@ -77,14 +77,15 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Fira Mono:pixelsize=16;2
+font-0 = Hermit:pixelsize=10;2
 font-1 = Fira Mono:pixelsize=24:fontformat=truetype;1
-font-2 = Fira Mono:pixelsize=16;2
-font-3 = IPAGothic:pixelsize=16;2
+font-2 = Fira Mono:pixelsize=10;2
+font-3 = IPAGothic:pixelsize=10;2
 
 modules-left = menu-apps wintext mpdcontrols mpdinfo
 modules-center = i3
-modules-right = pulseaudio xbacklight battery date
+;modules-right = pulseaudio xbacklight battery date
+modules-right = alsa pulseaudio xbacklight battery date
 
 ;tray-position = middle
 ;tray-padding = 5
