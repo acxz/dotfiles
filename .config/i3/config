@@ -34,16 +34,20 @@ floating_modifier $mod
 exec sudo netctl start wlp2s0-GTother
 exec sudo netctl start wlp8s0-GTother
 exec sudo netctl start wlp59s0-eduroam
+exec sudo netctl start wlp59s0-Federal\ Bureau\ of\ Investigation
 
 # Wallpaper
 # exec --no-startup-id feh --bg-scale ~/Pictures/sun_night_star.jpg
 
+# vid wallpaper
+#exec --no-startup-id xwinwrap -g 3840x2160 -ov -ni -- mpv --loop -wid WID ~/smoke-in-rain.mp4
+#
 # Picom
 # With conf file
 exec --no-startup-id picom --config ~/.config/picom.conf -b
 
 # Eliminate window titlebars
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 # for_window [class="^.*"] floating enable
 
 # Floating titlebars
@@ -54,8 +58,8 @@ bindsym --release button2 kill
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Gaps
-gaps inner 40 #10
-#gaps outer 40
+gaps inner 20 #10
+#gaps outer 20
 
 # Colors
 set $black      #20201d
@@ -89,7 +93,7 @@ exec_always --no-startup-id ~/bin/walset
 bindsym $mod+o open
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 bindsym $mod+backslash exec --no-startup-id termite -r fl_term
 for_window [window_role=fl_term] floating enable
 
@@ -273,9 +277,15 @@ bindsym F11 exec xbacklight -set 1
 bindsym F12 exec xbacklight -set 100
 
 # Binding for volume
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
-bindsym XF86AudioMute exec pulseaudio-ctl mute #F5
+# pulseaudio
+#bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
+#bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
+#bindsym XF86AudioMute exec pulseaudio-ctl mute #F5
+
+# alsa
+bindsym XF86AudioRaiseVolume exec amixer set Master 2dB+
+bindsym XF86AudioLowerVolume exec amixer set Master 2dB-
+bindsym XF86AudioMute exec amixer sset Master toggle && exec amixer sset Speaker toggle
 
 # Binding for next,prev,play/pause
 bindsym XF86AudioNext exec mpc next #F8
@@ -295,7 +305,7 @@ bindsym $mod+Shift+x exec i3lock -k --datestr="%a %m/%d/%y" -i ~/Pictures/night_
 bindsym Control+Next exec redshift -O 3000
 bindsym Control+Prior exec redshift -x
 
-# BInding for mzc
+# Binding for mzc
 bindsym Control+$mod+0 exec ~/.config/i3/layout_mzc.sh
 
 # Binding for floating windows snapping
