@@ -42,7 +42,7 @@ margin-bottom = 0
 format-background = ${colors.background-alt}
 
 [bar/nsbar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR}
 width = 100%
 height = 2%
 offset-x = 0
@@ -82,10 +82,11 @@ font-1 = Fira Mono:pixelsize=24:fontformat=truetype;1
 font-2 = Fira Mono:pixelsize=9;2
 font-3 = IPAGothic:pixelsize=9;2
 
-modules-left = menu-apps wintext mpdcontrols mpdinfo
+;modules-left = menu-apps wintext mpdcontrols mpdinfo
+modules-left = menu-apps wintext
 modules-center = i3
 ;modules-right = pulseaudio xbacklight battery date
-modules-right = alsa pulseaudio xbacklight battery date
+modules-right = alsa xbacklight battery date
 
 ;tray-position = middle
 ;tray-padding = 5
