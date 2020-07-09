@@ -74,8 +74,8 @@ border-right-color = #00000000
 spacing = 0
 padding-left = 0
 padding-right = 0
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Hermit:pixelsize=9;2
 font-1 = Fira Mono:pixelsize=24:fontformat=truetype;1
