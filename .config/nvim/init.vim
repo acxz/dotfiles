@@ -31,6 +31,9 @@ nnoremap <C-l> :call NumberToggle()<cr>
 " Number of cols (Line Wrap)
 set textwidth=80
 
+" Mouse support
+set mouse=a
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,6 +182,9 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'rhysd/vim-clang-format'
+Plug 'tell-k/vim-autopep8'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
@@ -211,3 +217,21 @@ map <C-n> :NERDTreeToggle<CR>
 
 " close if last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"==> autopep8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:autopep8_disable_show_diff=1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"==> syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {'mode':'passive'}
