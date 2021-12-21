@@ -31,10 +31,8 @@ font pango:Fira Mono 12
 floating_modifier $mod
 
 # Wifi
-exec sudo netctl start wlp2s0-GTother
-exec sudo netctl start wlp8s0-GTother
-exec sudo netctl start wlp59s0-eduroam
-exec sudo netctl start wlp59s0-Federal\ Bureau\ of\ Investigation
+# exec sudo netctl start wlp59s0-eduroam
+# exec sudo netctl start wlp59s0-Federal\ Bureau\ of\ Investigation
 
 # Wallpaper
 # exec --no-startup-id feh --bg-scale ~/Pictures/sun_night_star.jpg
@@ -47,8 +45,11 @@ exec sudo netctl start wlp59s0-Federal\ Bureau\ of\ Investigation
 exec --no-startup-id picom --config ~/.config/picom.conf -b
 
 # Eliminate window titlebars
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0 # 2
 # for_window [class="^.*"] floating enable
+
+# Rounded corners
+border_radius 7 # 0
 
 # Floating titlebars
 # bindsym $mod+Shift+space exec --no-startup-id ~/.config/i3/i3ipc_hideshow_border floating toggle
@@ -59,7 +60,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Gaps
 gaps inner 20 #10
-#gaps outer 20
+# gaps outer 20
 
 # Colors
 set $black      #20201d
@@ -93,9 +94,7 @@ exec_always --no-startup-id ~/bin/walset
 bindsym $mod+o open
 
 # start a terminal
-bindsym $mod+Return exec termite
-bindsym $mod+backslash exec --no-startup-id termite -r fl_term
-for_window [window_role=fl_term] floating enable
+bindsym $mod+Return exec alacritty
 
 # start firefox
 bindsym $mod+Shift+f exec firefox
@@ -260,10 +259,6 @@ mode "$mode_gaps_outer" {
 #bar {
 #       status_command i3status
 #}
-
-# Matching Rule for default floating size of termite
-# for_window [class="^Termite$" floating] resize grow width 80 px
-
 
 # Binding for rofi
 bindsym $mod+d exec rofi -show run -lines 10
