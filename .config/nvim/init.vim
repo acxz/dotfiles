@@ -133,7 +133,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 " Delete trailing spaces after save and return position
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+"autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " LaTeX indenting"
 let g:tex_flavor='latex'
@@ -150,6 +150,14 @@ augroup END
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"===> Terminal
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Editing mappings
@@ -184,7 +192,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'rhysd/vim-clang-format'
 Plug 'tell-k/vim-autopep8'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -222,16 +230,3 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "==> autopep8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:autopep8_disable_show_diff=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"==> syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {'mode':'passive'}
