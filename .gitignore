@@ -93,6 +93,11 @@
 !/.config/vis/colors
 /.config/vis/colors/*
 !/.config/vis/colors/nightsky
+#
+# zathura
+!/.config/zathura
+/.config/zathura/*
+!/.config/zathura/zathurarc
 
 # Dircolors
 !.dircolors
