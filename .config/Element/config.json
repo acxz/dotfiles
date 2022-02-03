@@ -1,0 +1,36 @@
+{
+    "showLabsSettings": true,
+
+    "settingDefaults": {
+        "custom_themes": [
+        {
+            "name": "Solarized Dark",
+            "is_dark": true,
+            "colors": {
+                "accent-color": "#afffa3",
+                "secondary-content": "#afffa3",
+                "tertiary-content": "#afffa3",
+                "timeline-text-color": "#afffa3",
+                "timeline-text-secondary-color": "#afffa3",
+                "roomlist-text-color": "#afffa3",
+
+                "sidebar-color": "#1e2832",
+                "timeline-background-color": "#1e2832",
+
+                "timeline-highlights-color": "#223344",
+                "roomlist-background-color": "#223344",
+
+                "warning-color": "#d73737",
+                "roomlist-text-secondary-color": "#d73737",
+
+                "primary-color": "#6684e1",
+                "reaction-row-button-selected-bg-color": "#6684e1",
+
+                "roomlist-separator-color": "#7054d4",
+
+                "roomlist-highlights-color": "#586e75"
+            }
+        }
+        ]
+    }
+}
