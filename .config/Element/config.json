@@ -4,7 +4,7 @@
     "settingDefaults": {
         "custom_themes": [
         {
-            "name": "Solarized Dark",
+            "name": "Custom Atelier Mix",
             "is_dark": true,
             "colors": {
                 "accent-color": "#afffa3",
