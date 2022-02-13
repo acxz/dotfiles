@@ -8,14 +8,14 @@
 ;=====================================================
 
 [colors]
-background = #00000000
+background = ${xrdb:background}
 background-alt = ${xrdb:color0}
 
 ; night_sky -   #afffa3
 ; meteor -      #ddc3ff
 ; sunset -      #dbd0b7
 ; red_forest -  #eeb1ad
-foreground = ${xrdb:color7}
+foreground = ${xrdb:foreground}
 ; foreground = #afffa3
 foreground-alt = #55
 alert = #bd2c40
@@ -32,14 +32,14 @@ white = ${xrdb:color7}
 ;secondary = ${xrdb:color5}
 
 primary = ${xrdb:color6}
-secondary = ${xrdb:color1}
+secondary = ${xrdb:color5}
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
 [settings]
-format-background = ${colors.background-alt}
+format-background = ${colors.background}
 
 [bar/nsbar]
 monitor = ${env:MONITOR}
@@ -50,12 +50,12 @@ offset-y = 0
 
 bottom = false
 
-background = ${colors.background}
+background = #00000000
 foreground = ${colors.foreground}
 
-overline-size = 2
+overline-size = 2 // 0
 overline-color = #f00
-underline-size = 2
+underline-size = 2 // 0
 underline-color = #00f
 
 ;border-size = 2
@@ -70,7 +70,7 @@ border-left-color = #00000000
 border-right-size  = 20
 border-right-color = #00000000
 
-;radius = 5
+radius = 0 // how to radius on each module instead of the bar?
 spacing = 0
 padding-left = 0
 padding-right = 0
@@ -146,7 +146,7 @@ index-sort = true
 
 label-mode-padding = 1
 label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.background-alt}
+label-mode-background = ${colors.background}
 
 label-name = %name%
 
@@ -161,13 +161,13 @@ label-urgent = %{B#00f} %name% %{B-}
 
 
 ;label-focused = %name%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline = ${colors.primary}
 label-focused-overline = ${colors.primary}
 label-focused-padding = 1
 ;
 ;label-occupied= %name%
-label-occupied-background = ${colors.background-alt}
+label-occupied-background = ${colors.background}
 label-occupied-underline = ${colors.secondary}
 label-occupied-overline = ${colors.secondary}
 label-occupied-padding = 1
@@ -209,7 +209,7 @@ label-focused = %name%
 label-focused-underline = ${colors.primary}
 label-focused-overline = ${colors.green}
 label-focused-padding = 1
-;label-focused-padding-background = $(colors.background-alt}
+;label-focused-padding-background = $(colors.background}
 
 label-unfocused = %name%
 ;label-unfocused-foreground = ${colors.secondary}
@@ -263,8 +263,8 @@ card = intel_backlight
 ;enable-scroll = true
 format = <label>
 label = lit : %percentage%%
-format-underline = ${colors.yellow}
-format-overline = ${colors.yellow}
+format-underline = ${colors.cyan}
+format-overline = ${colors.cyan}
 format-padding = 1
 
 bar-width = 10
@@ -276,7 +276,7 @@ bar-fill-font = 2
 bar-fill-foreground = ${colors.magenta}
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = ${colors.foreground}
 
 scroll-up = xbacklight -inc 2
 scroll-down = xbacklight -dec 2
@@ -308,14 +308,14 @@ format-disconnected-underline = ${self.format-connected-underline}
 
 label-connected = %essid%
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -324,12 +324,12 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-foreground-foreground = ${colors.foreground-alt}
+format-connected-foreground-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground}
 
 [module/date]
 type = internal/date
@@ -389,14 +389,14 @@ interval = 2
 format-volume = <label-volume>
 label-volume = vol : %percentage%%
 label-volume-foreground = ${root.foreground}
-format-volume-overline = ${colors.green}
-format-volume-underline = ${colors.green}
+format-volume-overline = ${colors.yellow}
+format-volume-underline = ${colors.yellow}
 format-volume-padding = 1
 
 format-muted = <label-muted>
 label-muted = mut : %percentage%%
-format-muted-overline = ${colors.green}
-format-muted-underline = ${colors.green}
+format-muted-overline = ${colors.yellow}
+format-muted-underline = ${colors.yellow}
 format-muted-padding = 1
 
 [module/pulseaudio]
@@ -532,8 +532,8 @@ type = custom/text
 
 content = c|fs|ft
 
-content-underline = ${colors.blue}
-content-overline = ${colors.blue}
+content-underline = ${colors.red}
+content-overline = ${colors.red}
 content-foreground = ${colors.foreground}
 content-padding = 1
 
@@ -567,8 +567,8 @@ menu-0-2-exec = i3-msg floating toggle
 [module/menu-apps]
 type = custom/menu
 
-format-underline = ${colors.magenta}
-format-overline = ${colors.magenta}
+format-underline = ${colors.green}
+format-overline = ${colors.green}
 format-foreground = ${colors.foreground}
 format-padding = 1
 
