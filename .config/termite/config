@@ -14,12 +14,13 @@ font = Hermit 11
 # foreground      = #afffa3
 # foreground_bold = #afffa3
 # cursor          = #afffa3
+# background      = #1e2832
 #background      = rgba(56, 60, 74, 0.999)
 background = rgba(30, 40, 50, 1)
 
 # black
-color0  = #20201d
-color8  = #7d7a68
+color0  = #223344
+color8  = #586e75
 
 # red
 color1  = #d73737
