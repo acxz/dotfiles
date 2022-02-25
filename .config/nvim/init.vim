@@ -51,9 +51,9 @@ set ruler
 " Highlight current line, number, and row
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=None ctermbg=16
-hi CursorLineNR cterm=None ctermbg=yellow ctermfg=16
-hi CursorColumn cterm=None ctermbg=16
+hi CursorLine cterm=None ctermbg=black
+hi CursorLineNR cterm=None ctermbg=yellow ctermfg=black
+hi CursorColumn cterm=None ctermbg=black
 set colorcolumn=82
 hi ColorColumn ctermbg=yellow
 
@@ -150,6 +150,8 @@ augroup END
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+set clipboard+=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Terminal
