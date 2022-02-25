@@ -38,9 +38,9 @@ set mouse=a
 "===> Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
+set background=dark
 syntax enable
 colorscheme desert
-set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> VIM user interface
@@ -51,9 +51,9 @@ set ruler
 " Highlight current line, number, and row
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=None ctermbg=black
+hi CursorLine cterm=None ctermbg=8
 hi CursorLineNR cterm=None ctermbg=yellow ctermfg=black
-hi CursorColumn cterm=None ctermbg=black
+hi CursorColumn cterm=None ctermbg=8
 set colorcolumn=82
 hi ColorColumn ctermbg=yellow
 
