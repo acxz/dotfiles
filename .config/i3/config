@@ -17,8 +17,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:xos4 Terminus 12
-font pango:Fira Mono 12
+#font pango:Hermit 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -39,28 +38,44 @@ floating_modifier $mod
 
 # vid wallpaper
 #exec --no-startup-id xwinwrap -g 3840x2160 -ov -ni -- mpv --loop -wid WID ~/smoke-in-rain.mp4
-#
-# Picom
-# With conf file
-exec --no-startup-id picom --config ~/.config/picom.conf -b
+
+# do not draw when inactive
+exec --no-startup-id unclutter &
+
+# compositor
+exec_always --no-startup-id picom --config ~/.config/picom.conf --experimental-backend -b
+
+# layout
+# TODO figure out detection based on monitor connected or not
+exec ~/.screenlayout/ovo-lg.sh
+
+# Wal colorscheme
+exec --no-startup-id wal -R
+
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Start a terminal
+bindsym $mod+Return exec termite
+
+# Start a browser
+bindsym $mod+Shift+f exec firefox
+
+# radius
+border_radius 7
 
 # Eliminate window titlebars
-for_window [class="^.*"] border pixel 0 # 2
+for_window [class="^.*"] border pixel 0
 # for_window [class="^.*"] floating enable
 
-# Rounded corners
-border_radius 7 # 0
-
 # Floating titlebars
-# bindsym $mod+Shift+space exec --no-startup-id ~/.config/i3/i3ipc_hideshow_border floating toggle
 bindsym --release button2 kill
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Gaps
 gaps inner 20 #10
-# gaps outer 20
 
 # Colors
 set $black      #20201d
@@ -72,7 +87,7 @@ set $magenta    #7054d4
 set $cyan       #1fad83
 
 set_from_resource   $primary    i3wm.color6
-set_from_resource   $secondary  i3wm.color1
+set_from_resource   $secondary  i3wm.color5
 set_from_resource   $warning    i3wm.color7
 set_from_resource   $bg         i3wm.color0
 
@@ -87,17 +102,10 @@ client.unfocused        $secondary  $secondary  $secondary  $secondary
 client.urgent           $warning    $warning    $warning    $warning
 
 # Dunst
-exec_always --no-startup-id dunst -lfr $primary -nfr $primary -cfr $primary -lb $bg -nb $bg -cb $bg -lf $warning -bf $warning -cf $warning -nf $warning &
-exec_always --no-startup-id ~/bin/walset
+exec_always --no-startup-id dunst &
 
 # Open empty container
 bindsym $mod+o open
-
-# start a terminal
-bindsym $mod+Return exec alacritty
-
-# start firefox
-bindsym $mod+Shift+f exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -134,6 +142,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Ctrl+f fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -142,7 +151,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-# bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 3, mark --add --toggle _; [con_mark=_] floating enable, border normal 3; mark --add --toggle f;"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -180,8 +188,12 @@ bindsym $mod+Shift+8 move container to workspace 8: ate
 bindsym $mod+Shift+9 move container to workspace 9: com
 bindsym $mod+Shift+0 move container to workspace 10: mzc
 
+# move workspace to different monitor
+bindsym $mod+Ctrl+Shift+l move workspace to output right
+bindsym $mod+Ctrl+Shift+h move workspace to output left
+
 # toggle sticky windows across all workspaces
-bindsym $mod+t sticky toggle
+bindsym $mod+minus sticky toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -191,7 +203,7 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode "resize " {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -214,7 +226,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "resize "
 
 # Change gaps on the fly
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -273,14 +285,9 @@ bindsym F12 exec xbacklight -set 100
 
 # Binding for volume
 # pulseaudio
-#bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
-#bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
-#bindsym XF86AudioMute exec pulseaudio-ctl mute #F5
-
-# alsa
-bindsym XF86AudioRaiseVolume exec amixer set Master 2dB+
-bindsym XF86AudioLowerVolume exec amixer set Master 2dB-
-bindsym XF86AudioMute exec amixer sset Master toggle && exec amixer sset Speaker toggle
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
+bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 # Binding for next,prev,play/pause
 bindsym XF86AudioNext exec mpc next #F8
@@ -301,9 +308,10 @@ bindsym Control+Next exec redshift -O 3000
 bindsym Control+Prior exec redshift -x
 
 # Binding for mzc
-bindsym Control+$mod+0 exec ~/.config/i3/layout_mzc.sh
+# bindsym Control+$mod+0 exec ~/.config/i3/layout_mzc.sh
 
 # Binding for floating windows snapping
+# Maybe use huiol.mn? for snapping around the screen
 bindsym Control+$mod+1 floating enable, exec divvy.sh quarter-top-left
 bindsym Control+$mod+2 floating enable, exec divvy.sh half-top
 bindsym Control+$mod+3 floating enable, exec divvy.sh quarter-top-right
