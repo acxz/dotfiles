@@ -1,23 +1,16 @@
-volume
-ahhhh
-
 zathura
 -colors (learn templating with pywal)
---contribute template back to pywal upstream
+(currently using gideonwolfe's method) instead of templating
 
 picom
--config file
+-exclude apps for blur (full screen ff and video/image viewers)
+-shadow on polybar
 
 walset
 -add a rofi way of changing themes
 
 resolution settings
--make a script to change resolution for different systems
---firefox
---GDK GTK
---dpi xresources
---i3gaps
---polybar
+-1080 4 lyfe
 
 gtk
 -change colors on the fly
@@ -26,10 +19,13 @@ gtk
 - wpgtk
 
 polybar
--borders or mabye should i just make it into one bar
+-borders or maybe should i just make it into one bar
+--past me too smart
 --just try more stuff/config/designs
 -gaps b/t wrkspc (nah its okay p much decided defeat)
 -c|fs|ft (make individual buttons)
+maybe just don't worry about polybar and wait for the wayland revolution
+waybar
 
 vim
 -separators
@@ -43,9 +39,7 @@ xrandr -o switcher script (p sure one is floating around on archlinux forums)
 can i somehow access onboard imu?
 
 zsh
--prompt want some cool arrows or something
---bubbles these days
---virtualenv
+--venv, conda env
 
 tty
 -blinking block cursor
@@ -54,7 +48,10 @@ tty
 --status bar
 -tmux
 --just better multiplexing than dvtm
+-byobu
+--better than tmux?
 -pictures and movies (this is hard)
+-take a look at PyTerminalMediaViewer
 --maybe get them to not be full screen
 
 i3 (maybe just move away from i3)
@@ -81,7 +78,7 @@ dunst
 -mpd
 --maybe include cover art
 -screenshot
--also other types of music as well e.g. youtube spotify
+-also other types of music as well e.g. youtube soundcloud (mpris ig)
 
 login ??
 -use lock scren
@@ -90,21 +87,201 @@ login ??
 lock screen
 -update with new screenshot
 
+refind minimal theme
+
 themes
 -pywal
 --gtk
 --vim lightline colors
 --lock
 
-weechat
-
-mutt
-
-htop
-figure out how to customize the bars like noefetch bars just diff ascii block
-
-I kinda want to make a radar app for linux like a cli one
--where do i pull data from tho?
+aerc
 
 touchpad-settings
 /etc/X11/xorg.conf.d/70-synaptics.conf
+
+Safe policy
+julia ddp
+julia mppi
+julia adaptive control
+julia ros
+julia rocm
+l1 in ardupilot
+gym continuous
+plotjuggler mavlink
+
+@R@mblin'Wr3ckfr0mGT
+
+cli radar (if i can get images just timg it) notcurses?
+contribute to wttr.in: https://github.com/chubin/wttr.in/issues/716
+
+bug that darkgray does not equal 8 in neovim when setting ctermbg
+https://siatwe.wordpress.com/2018/03/23/vim-ctermfg-and-ctermbg-color-values/
+
+mod pywal to have diff background from color0
+black is too black for me
+like something more subdued
+
+MUSIC POWER
+
+flutter app for music playing local
+and streaming sources (yt, sc) (animebytes, bandcamp, ...)
+look at newpipeextractor for music backends
+(https://github.com/TeamNewPipe/NewPipeExtractor)
+newpipe's frontend is p cool, https://github.com/TeamNewPipe/NewPipe (android only)
+closest we want: https://github.com/Sangwan5688/BlackHole/issues/39 labelled as wontfix
+
+include soulseek dl/up to immediately listen once torrent finishes
+
+automatic tagging with beets for local library/plex/kodi/funkwhale
+automatic updating with lidarr for local library/plex/kodi/funkwhale
+
+plex/funkwhale uploading as well
+jellyfin
+
+use our app to create local server on one device to have another connected
+device stream/access music from
+
+why user accounts?
+cache'd playlists can be shared across devices
+listening to same song (how to do dis?)
+
+inspiration: nuclear-player
+
+existing stuff
+https://awesomeopensource.com/projects/flutter-apps/music-player
+flutter music apps: flutter-netease-music
+                    blackhole only android
+foobar2000 extension plugin system
+youtube music
+
+blackhole has some dope features:
+https://github.com/Sangwan5688/BlackHole#features
+
+normalize sound audio form one song to next so you that user doesn't have to
+fiddle with volume
+
+add lyrics (romanized as well) with Genius
+add videos
+
+look at spicetifies extensions for additional features
+
+flutter audio support:
+https://github.com/ryanheise/just_audio/tree/minor/just_audio
+
+spotify like peer-to-peer listen together
+
+# END MUSIC POWER
+
+Add tokyo night to wal https://github.com/folke/tokyonight.nvim
+Add catuppicin to wal
+
+how to showcase the transformers card art
+can stitch together both transformers but still need to made it widescreen
+somehow
+liquid rescaling
+waifu2x?
+
+take over the pypi package for united_states_congress
+https://github.com/unitedstates/congress/pull/283
+
+read atla notepad
+nick's komga
+pw: akashcomicbooks
+
+btm: sort cpu by frequency instead of id look at cpufreq alias
+use blocks (didn't work)
+https://docs.rs/tui/latest/tui/symbols/enum.Marker.html
+need to use a sparkline to fill in everything (maybe just for network)
+use a guage for battery (cool if its circular) (its not circular but still
+better than the current one
+do some smoothing on the graphs, make its look cooler and smoother
+add uptime?
+turn on fans manually? https://wiki.archlinux.org/title/Fan_speed_control#ThinkPad_laptops
+really scary tho, just reading/showing fans is prob a good start (this is like
+the acceleration gauge) (gotta get those rpms!)
+
+paru: use separate pacman.conf for chroot (how to handle the IgnorePkg)
+https://github.com/Morganamilo/paru/issues/716
+
+rofi for killing tasks (this would be a godsend tbh)
+
+transparency stop on video / image viewers
+and stop on full screen firefox
+
+get cava gradient working with wal colors
+cava mirror across xaxis (i dont think i would use this tbh)
+use notcurses or more resolute unicode blocks with cava
+it already has good resolution, but looks like the blocks are hardcoded to be
+just one color
+
+use cava colors horizontally like in this post:
+https://www.reddit.com/r/unixporn/comments/ui7vk5/kde_plasma_kubuntu_2004/
+
+add radius to wallpapers so that they look rounded and the empty space is
+colored the same as laptop bezel
+maybe even do shadow blur on the background wallpaper? like gnome 42 look
+
+add other relevant benchmarks to the microbenchmark readme
+https://github.com/JuliaLang/www.julialang.org/issues/1202
+
+add sextent blitter unicode block mode/characters to timg
+https://www.compart.com/en/unicode/block/U+2580
+better yet just use notcurses as backend (https://notcurses.com/)
+
+julia a_star alg improvements
+julia use value iteration/policy iteration
+create policyiteration package like discretevalueiteration
+
+add more than 6 pin repos via github readme stats
+
+spicetify dribbblish wal theme
+vim /usr/share/spicetify-cli/Themes/Dribbblish/color.ini
+
+use pywalfox colors for the darker shades required in element and spotify themes
+
+when click time on polybar open up `cal -y`
+
+To fix webgl in firefox on archlinux with nvidia:
+https://bugzilla.mozilla.org/show_bug.cgi?id=1455498#c12
+
+polybar mute doesn't get reflected/triggered properly with pulse module
+
+openfoam cfd
+use gpus/hardware acceleration
+current openfoam cfd doesn't use gpu in source
+some plugins/forks like paralution and ripfoam
+
+what backend solvers is it using? if gradient based can use autodiff
+Example? https://openfoamwiki.net/index.php/IcoFoam
+A couple of grad calls made, which means autodiff would benefit
+solvers: https://www.openfoam.com/documentation/user-guide/a-reference/a.1-standard-solvers
+but this is still at a higher level compared to what actual solver algorithm is
+choosen
+here are the numerics for openfoam which has a section on Linear Equation
+Solvers: https://www.openfoam.com/documentation/guides/latest/doc/openfoam-guide-numerics.html
+this is what I want to improve
+
+so mesh numbering matrices are sparse, state of art is cuthill-mckee in cfd
+can use sparse reordering methods from gtsam (nonlinear opt)
+maybe these methods can improve ordering and subsequent optimization scheme for cfd
+is the goal to reduce the bandwidth/profile or to reduce fill-in?
+
+checkout colamd and symamd (symamd is just symmetric colamd) cfd mats are all
+symmetric
+compare cm vs rcm (rcm shoud be better with respect to decreasing fill in)
+test and compare times
+
+ch 5 kinda dope: https://doc.cfd.direct/notes/cfd-general-principles/contents
+best method is preconditioned conjugate grad?
+
+also why is cfd linear program and not nonlinear program?
+
+parallelize pokeshell with GNU Parallels
+
+dynamically change precision level during runtime of cfd sims
+
+using graph neural networks to compute optimal fill in
+
+blender doesn't show normal arrows
+blender doesn't load .dae files
