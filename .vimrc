@@ -107,10 +107,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-"set shiftwidth=4
-"set tabstop=4
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 " Highlight trailing spaces
 :hi ExtraWhitespace ctermbg=cyan
@@ -130,8 +128,6 @@ endfun
 
 "Delete trailing spaces after save and return position
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.py :call <SID>StripTrailingWhitespaces()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "===> Moving around, tabs, and windows, and buffers
@@ -192,6 +188,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'rhysd/vim-clang-format'
 Plug 'nvie/vim-flake8'
+Plug 'dense-analysis/ale'
 "
 call plug#end()
 
